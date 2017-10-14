@@ -1,5 +1,6 @@
 package main.java.Model;
 
+import javafx.scene.image.Image;
 import main.java.Model.Items.Item;
 import javafx.scene.paint.Color;
 import main.java.Model.Items.ItemEnum;
@@ -20,6 +21,8 @@ public class Player extends Occupant{
     private int locY;
     private ArrayList<ItemStackObject> inventory;
 
+    private static Image playerImage;
+
     private static final Player player = new Player();
 
     private Player() {
@@ -33,6 +36,7 @@ public class Player extends Occupant{
 
         inventory = new ArrayList<ItemStackObject>(20);
         inventory.add(new ItemStackObject(ItemEnum.IRON_ORE, 5));
+        playerImage = new Image("File:./assets/Player.png", 53, 53, true, true);
     }
 
     public static Player getPlayer() {
@@ -172,5 +176,10 @@ public class Player extends Occupant{
 
     public ArrayList<ItemStackObject> getInventory() {
         return inventory;
+    }
+
+    @Override
+    public Image getOccupantImage() {
+        return playerImage;
     }
 }

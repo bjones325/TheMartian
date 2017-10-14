@@ -3,7 +3,7 @@ package main.java.Model.Enemies;
 import main.java.Model.GameManager;
 import main.java.Model.Occupant;
 
-public abstract class Enemy  extends Occupant {
+public abstract class Enemy extends Occupant {
     public int getLocX() {
         return locX;
     }

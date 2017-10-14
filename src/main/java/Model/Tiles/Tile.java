@@ -38,9 +38,8 @@ public class Tile {
     public StackPane getTileStackPane() {
         StackPane tilePane = new StackPane();
         tilePane.getChildren().add(new ImageView(terrainType.getImageView()));
-        if (x == GameManager.getInstance().getPlayer().getLocX() &&
-                y == GameManager.getInstance().getPlayer().getLocY()) {
-            tilePane.getChildren().add(new ImageView(new Image("File:./assets/Player.png", 53, 53, true, true)));
+        if (isOccupied()) {
+            tilePane.getChildren().add(new ImageView(occupant.getOccupantImage()));
         }
         return tilePane;
     }
