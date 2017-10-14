@@ -5,6 +5,16 @@ public abstract class Item {
 
     public String getName() { return name; }
 
+    public Blueprint getBp() {
+        return bp;
+    }
+
+    public void setBp(Blueprint bp) {
+        this.bp = bp;
+    }
+
+    public Blueprint bp;
+
     protected int weight;
     protected String name;
 
@@ -17,5 +27,7 @@ public abstract class Item {
         weight = -1;
         name = "";
     }
+
+    public abstract void onCraft();
 
 }

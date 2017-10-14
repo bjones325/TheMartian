@@ -68,6 +68,15 @@ public class GameManager {
         return instance.tm.getTile(player.getLocX(),player.getLocY()).getTileType();
     }
 
+    public int[] getPlayerLoc() {
+        int[] tmp = new int[2];
+
+        tmp[0] = player.getLocX();
+        tmp[1] = player.getLocY();
+
+        return tmp;
+    }
+
     public void endOfTurnTick() {
         //When a player completes his turn it will call this
 
