@@ -1,4 +1,6 @@
-package main.java.Model;
+package main.java.Model.Items;
+
+import main.java.Model.Items.ItemEnum;
 
 public class ItemStackObject {
     private ItemEnum _obj;
