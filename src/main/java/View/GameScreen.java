@@ -39,6 +39,7 @@ public class GameScreen extends BorderPane {
         rightPanel.updateInventory();
         rightPanel.updateOptionsBox();
         updateMessageBox();
+        mapView.update();
     }
 
     public static void updateMessageBox() {
