@@ -1,6 +1,9 @@
 package main.java.View;
 
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import main.java.Model.ChatManager;
+import main.java.Model.GameManager;
 
 public class GameScreen extends BorderPane {
 
@@ -10,7 +13,7 @@ public class GameScreen extends BorderPane {
     private static RightPanel rightPanel;
     private static MessageBox messageBox;
 
-    private GameScreen instance;
+    private static GameScreen instance;
 
     public GameScreen() {
         topPanel = new TopPanel();
@@ -22,7 +25,12 @@ public class GameScreen extends BorderPane {
         setLeft(leftPanel);
         setRight(rightPanel);
         //setCenter(GridFX.getInstance());
-        setBottom(messageBox.getChatBox());
+        setBottom(messageBox);
         setMaxSize(700, 700);
+        updateMessageBox();
+    }
+
+    public static void updateMessageBox() {
+        messageBox.updateMessageBox();
     }
 }
