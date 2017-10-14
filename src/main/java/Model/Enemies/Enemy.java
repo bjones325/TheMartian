@@ -49,6 +49,7 @@ public abstract class Enemy {
     public void onTick() {
         this.move();
     }
+
     public void move() {
         //Placeholder move()
         int playerX = GameManager.getInstance().getPlayer().getLocX();
