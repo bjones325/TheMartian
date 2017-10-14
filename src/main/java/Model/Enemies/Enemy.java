@@ -27,14 +27,14 @@ public abstract class Enemy {
         return attack;
     }
 
-    private int moveSpd;
-    private int attack;
+    protected int moveSpd;
+    protected int attack;
     EnemyTypeEnum type;
     String image;
-    private int locX;
-    private int locY;
-    private int health;
-    private String name;
+    protected int locX;
+    protected int locY;
+    protected int health;
+    protected String name;
 
     public Enemy(int locX,int locY) {
         this.locX = locX;
