@@ -8,4 +8,16 @@ public class ItemStackObject {
         _obj = obj;
         _amount = amount;
     }
+
+    public ItemEnum get_obj() {
+        return _obj;
+    }
+
+    public int get_amount() {
+        return _amount;
+    }
+
+    public void increment_amount(int incrm) {
+        this._amount = _amount + incrm;
+    }
 }

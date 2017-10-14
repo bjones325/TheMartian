@@ -1,5 +1,8 @@
 package main.java.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 
     private int health;
@@ -11,6 +14,7 @@ public class Player {
 
     private int locX;
     private int locY;
+    private List<ItemStackObject> inventory;
 
     private static final Player player = new Player();
 
@@ -22,6 +26,9 @@ public class Player {
 
         locX = 0;
         locY = 0;
+
+        inventory = new ArrayList<ItemStackObject>(20);
+        inventory.add(new ItemStackObject(ItemEnum.IRON_ORE, 5));
     }
 
     public static Player getPlayer() {
@@ -35,8 +42,6 @@ public class Player {
     public int getLocY() {
         return locY;
     }
-
-
 
     public void moveUp() {
         locY++;
@@ -104,5 +109,23 @@ public class Player {
 
     public void setLocY(int locY) {
         this.locY = locY;
+    }
+
+
+    private boolean getObject(ItemEnum kind, int amount) {
+        //If we already have that item in inventory just increment it
+        for (ItemStackObject item : inventory) {
+            if (item.get_obj().equals(kind)) {
+                item.increment_amount(amount);
+                return true;
+            }
+        }
+
+        //Otherwise make it and add it into the inventory
+        ItemStackObject tmp = new ItemStackObject(kind, amount);
+
+        inventory.add(tmp);
+
+        return true;
     }
 }
