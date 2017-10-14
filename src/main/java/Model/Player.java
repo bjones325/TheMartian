@@ -7,7 +7,7 @@ import main.java.Model.Items.ItemStackObject;
 
 import java.util.ArrayList;
 
-public class Player {
+public class Player extends Occupant{
 
     private int health;
     private int temp;
@@ -58,32 +58,40 @@ public class Player {
     public boolean moveUp() {
         if (locY == 0) return false;
         if (!validMove(locX, locY - 1)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locY--;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 
     public boolean moveDown() {
         if (locY == GameManager.getInstance().getTileManager().getWidthHeight() - 1) return false;
         if (!validMove(locX, locY + 1)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locY++;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 
     public boolean moveRight() {
         if (locX == GameManager.getInstance().getTileManager().getWidthHeight() - 1) return false;
         if (!validMove(locX + 1, locY)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locX++;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 
     public boolean moveLeft() {
         if (locX == 0) return false;
         if (!validMove(locX -1, locY)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locX--;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 

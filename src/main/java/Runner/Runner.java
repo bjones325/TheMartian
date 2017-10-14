@@ -21,15 +21,13 @@ public class Runner extends Application {
 
         primaryStage.setTitle("The Martian");
         GameScreen screen = new GameScreen();
-        //primaryStage.setWidth(810);
-        //primaryStage.setHeight(710);
         Scene scene = new Scene(screen, 800 , 700);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
         stage = primaryStage;
         System.out.println(scene.getWidth() + "--" + scene.getHeight());
-        if (scene.getWidth() == 810 && scene.getHeight() == 710) {
+        if (scene.getWidth() == 800 && scene.getHeight() == 700) {
             GameScreen splen = new GameScreen();
             scene = new Scene(splen, 810, 710);
             primaryStage.setResizable(false);
@@ -43,6 +41,7 @@ public class Runner extends Application {
         GameManager.getInstance().getChatManager().addMessage("And notice you're on the surface of Mars!", Color.BLACK);
 
         scene.setOnKeyPressed(e -> {
+            if (!GameManager.getInstance().isPlayersTurn()) return;
             if (e.getCode() == KeyCode.UP) {
                 GameManager.getInstance().getPlayer().moveUp();
             } else if (e.getCode() == KeyCode.LEFT) {
@@ -54,8 +53,10 @@ public class Runner extends Application {
             } else {
                 return;
             }
+            GameManager.getInstance().setPlayersTurn(false);
             GameManager.getInstance().endOfTurnTick();
             screen.updateAllScreen();
+            GameManager.getInstance().setPlayersTurn(true);
         });
         System.out.println(scene.getWidth() + "--" + scene.getHeight());
     }
