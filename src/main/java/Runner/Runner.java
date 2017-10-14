@@ -29,7 +29,7 @@ public class Runner extends Application {
         primaryStage.show();
         stage = primaryStage;
         System.out.println(scene.getWidth() + "--" + scene.getHeight());
-        if (scene.getWidth() == 810 && scene.getHeight() == 710) {
+        if (scene.getWidth() == 800 && scene.getHeight() == 700) {
             GameScreen splen = new GameScreen();
             scene = new Scene(splen, 810, 710);
             primaryStage.setResizable(false);
