@@ -6,8 +6,8 @@ public class GameScreen extends BorderPane {
 
 
     private static TopPanel topPanel;
-    /*private static LeftPanel leftPanel;
-    private static RightPanel rightPanel;
+    private static LeftPanel leftPanel;
+    /*private static RightPanel rightPanel;
     private static MessageBox messageBox;*/
 
     private GameScreen instance;

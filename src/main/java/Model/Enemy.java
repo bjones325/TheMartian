@@ -1,3 +1,5 @@
+package main.java.Model;
+
 public abstract class Enemy {
     int moveSpd;
     int attack;
