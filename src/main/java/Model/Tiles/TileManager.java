@@ -1,5 +1,7 @@
 package main.java.Model.Tiles;
 
+import java.util.Random;
+
 public class TileManager {
     private int width = 100;
     private int height = 100;
@@ -11,9 +13,15 @@ public class TileManager {
     private TileManager() {
         map = new Tile[width][height];
 
+        Random random = new Random();
+
         for(int x = 0; x < width; x++) {
             for(int y = 0; y < height; y++) {
-                map[x][y] = new Tile(TileEnum.BASE, x, y);
+                if(random.nextInt(3) == 0) {
+                    map[x][y] = new Tile(TileEnum.BASE, x, y);
+                } else {
+                    map[x][y] = new Tile(TileEnum.values()[random.nextInt(12)], x, y);
+                }
             }
         }
     }

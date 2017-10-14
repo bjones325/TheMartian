@@ -13,6 +13,8 @@ public class Tile {
     private int x;
     private int y;
 
+    private Building building;
+
     public Tile(TileEnum terrain, int x, int y) {
         terrainType = terrain;
         occupied = false;
@@ -26,7 +28,7 @@ public class Tile {
                 GameManager.getInstance().getPlayer().setTemp(GameManager.getInstance().getPlayer().getTemp() - 2);
                 break;
             case LAVA:
-                GameManager.getInstance().getPlayer().setTemp(GameManager.getInstance().getPlayer().getTemp() - 2);
+                GameManager.getInstance().getPlayer().setTemp(GameManager.getInstance().getPlayer().getTemp() + 10);
                 GameManager.getInstance().getPlayer().setHealth(GameManager.getInstance().getPlayer().getHealth() - 20);
                 break;
         }
@@ -43,6 +45,10 @@ public class Tile {
     }
 
     public TileEnum getTileType() { return terrainType; }
+
+    public Building getBuilding() { return building; }
+
+    public void setBuilding(Building building) { this.building = building; }
 
     public boolean isOccupied() {
         return occupied;
