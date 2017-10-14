@@ -1,5 +1,7 @@
 package main.java.Model;
 
+import main.java.Model.Enemies.Enemy;
+import main.java.Model.Enemies.EnemyManager;
 import main.java.Model.Tiles.TileManager;
 
 public class GameManager {
@@ -9,6 +11,7 @@ public class GameManager {
     private int temperature;
     private Player player;
     private TileManager tm = TileManager.getInstance();
+    private EnemyManager em = EnemyManager.getInstance();
 
     private static GameManager instance = new GameManager();
 
@@ -47,7 +50,7 @@ public class GameManager {
     public void endOfTurnTick() {
         //When a player completes his turn it will call this
 
-        //em.move();
+        em.onTick();
         tm.getTile(getPlayer().getLocX(), getPlayer().getLocY()).effect();
         incrementTime();
     }
