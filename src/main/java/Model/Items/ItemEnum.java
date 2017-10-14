@@ -1,4 +1,4 @@
-package main.java.Model;
+package main.java.Model.Items;
 
 public enum ItemEnum {
     IRON_ORE,

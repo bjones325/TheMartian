@@ -3,7 +3,7 @@ package main.java.View;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import main.java.Model.GameManager;
-import main.java.Model.ItemStackObject;
+import main.java.Model.Items.ItemStackObject;
 
 public class InvView extends VBox {
 
