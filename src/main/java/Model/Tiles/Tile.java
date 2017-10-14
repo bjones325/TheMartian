@@ -39,4 +39,6 @@ public class Tile {
         //tilePane.getChildren().add(te)
         return tilePane;
     }
+
+    public TileEnum getTileType() { return terrainType; }
 }
