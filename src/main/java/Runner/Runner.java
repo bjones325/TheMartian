@@ -18,7 +18,6 @@ public class Runner extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
         primaryStage.setTitle("The Martian");
         GameScreen screen = new GameScreen();
@@ -34,13 +33,19 @@ public class Runner extends Application {
         GameManager.getInstance().getChatManager().addMessage("And notice you're on the surface of Mars!", Color.BLACK);
 
         scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.SPACE) {
-                System.out.println("A key was pressed");
-                GameManager.getInstance().endOfTurnTick();
-                BuildingManager.getInstance().spawnBuilding(BuildingEnum.IRON_MINE, 10, 10);
-                screen.updateAllScreen();
-
+            if (e.getCode() == KeyCode.UP) {
+                GameManager.getInstance().getPlayer().moveUp();
+            } else if (e.getCode() == KeyCode.LEFT) {
+                GameManager.getInstance().getPlayer().moveLeft();
+            } else if (e.getCode() == KeyCode.RIGHT) {
+                GameManager.getInstance().getPlayer().moveRight();
+            }  else if (e.getCode() == KeyCode.DOWN) {
+                GameManager.getInstance().getPlayer().moveDown();
+            } else {
+                return;
             }
+            GameManager.getInstance().endOfTurnTick();
+            screen.updateAllScreen();
         });
     }
 
