@@ -1,6 +1,7 @@
 package main.java.Model;
 
 import main.java.Model.Items.Item;
+import javafx.scene.paint.Color;
 import main.java.Model.Items.ItemEnum;
 import main.java.Model.Items.ItemStackObject;
 
@@ -46,30 +47,44 @@ public class Player {
         return locY;
     }
 
+    private boolean validMove(int x, int y) {
+        if (GameManager.getInstance().getTileManager().getTile(locX, locY + 1).isOccupied()) {
+            GameManager.getInstance().getChatManager().addMessage("It seems this tile is occupied...", Color.RED);
+            return false;
+        }
+        return true;
+    }
 
-
-    public void moveUp() {
+    public boolean moveUp() {
+        if (locY == GameManager.getInstance().getTileManager().getWidthHeight()) return false;
+        if (!validMove(locX, locY + 1)) return false;
         locY++;
-        energy = energy - energyRate;
-        GameManager.getInstance().endOfTurnTick();
+        energy -= energyRate;
+        return true;
     }
 
-    public void moveDown() {
+    public boolean moveDown() {
+        if (locY == 0) return false;
+        if (!validMove(locX, locY - 1)) return false;
         locY--;
-        energy = energy - energyRate;
-        GameManager.getInstance().endOfTurnTick();
+        energy -= energyRate;
+        return true;
     }
 
-    public void moveRight() {
+    public boolean moveRight() {
+        if (locX == GameManager.getInstance().getTileManager().getWidthHeight()) return false;
+        if (!validMove(locX + 1, locY)) return false;
         locX++;
-        energy = energy - energyRate;
-        GameManager.getInstance().endOfTurnTick();
+        energy -= energyRate;
+        return true;
     }
 
-    public void moveLeft() {
-        locY--;
-        energy = energy - energyRate;
-        GameManager.getInstance().endOfTurnTick();
+    public boolean moveLeft() {
+        if (locX == 0) return false;
+        if (!validMove(locX -1, locY)) return false;
+        locX--;
+        energy -= energyRate;
+        return true;
     }
 
     public int getHealth() {

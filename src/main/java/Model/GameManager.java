@@ -22,6 +22,7 @@ public class GameManager {
         instance = this;
         time = 0;
         date = 0;
+        temperature = -70;
         player = Player.getPlayer();
         chatManager = ChatManager.getInstance();
         tm = TileManager.getInstance();

@@ -1,5 +1,6 @@
 package main.java.View;
 
+import javafx.geometry.Pos;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import main.java.Model.ChatManager;
@@ -38,6 +39,7 @@ public class GameScreen extends BorderPane {
         rightPanel.updateInventory();
         rightPanel.updateOptionsBox();
         updateMessageBox();
+        mapView.update();
     }
 
     public static void updateMessageBox() {

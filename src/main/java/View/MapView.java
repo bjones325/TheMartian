@@ -37,8 +37,8 @@ public class MapView extends GridPane {
             left = max - 11;
         }
 
-        for (int x = left; x < right; x++) {
-            for (int y = bottom; y < top; y++) {
+        for (int x = left; x <= right; x++) {
+            for (int y = bottom; y <= top; y++) {
                 this.add(GameManager.getInstance().getTileManager().getTile(x, y).getTileStackPane(), x, y);
             }
         }

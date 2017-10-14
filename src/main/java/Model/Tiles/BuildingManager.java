@@ -23,7 +23,7 @@ public class BuildingManager {
     public static BuildingManager getInstance() { return bm; }
 
     public void spawnBuilding(BuildingEnum buildingType, int posX, int posY)  {
-        Building b;
+        Building b = null;
 
 
         try {
@@ -36,7 +36,9 @@ public class BuildingManager {
             System.exit(23);
         }
 
+        buildingList.add(b);
 
+        TileManager.getInstance().getTile(posX, posY).setBuilding(b);
 
     }
 
