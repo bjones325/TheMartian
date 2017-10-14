@@ -5,6 +5,7 @@ import main.java.Model.Items.Item;
 import javafx.scene.paint.Color;
 import main.java.Model.Items.ItemEnum;
 import main.java.Model.Items.ItemStackObject;
+import main.java.Model.Tiles.TileEnum;
 
 import java.util.ArrayList;
 
@@ -54,6 +55,10 @@ public class Player extends Occupant{
     private boolean validMove(int x, int y) {
         if (GameManager.getInstance().getTileManager().getTile(x, y).isOccupied()) {
             GameManager.getInstance().getChatManager().addMessage("It seems this tile is occupied...", Color.RED);
+            return false;
+        }
+        if (GameManager.getInstance().getTileManager().getTile(x, y).getTileType() == TileEnum.MOUNTAIN) {
+            GameManager.getInstance().getChatManager().addMessage("Those mountains look impassable...", Color.RED);
             return false;
         }
         return true;
