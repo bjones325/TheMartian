@@ -24,7 +24,9 @@ public class Runner extends Application {
         //primaryStage.setWidth(810);
         //primaryStage.setHeight(710);
         Scene scene = new Scene(screen, 800 , 700);
-        if (scene.getWidth() == 800 && scene.getWidth() == 700) {
+        System.out.println(screen.getWidth() + "--" + screen.getHeight());
+        if (scene.getWidth() == 800 && scene.getHeight() == 700) {
+            GameScreen sc = new GameScreen();
             scene = new Scene(screen, 810, 710);
         }
         primaryStage.setResizable(false);
@@ -51,6 +53,7 @@ public class Runner extends Application {
             GameManager.getInstance().endOfTurnTick();
             screen.updateAllScreen();
         });
+        System.out.println(screen.getWidth() + "--" + screen.getHeight());
     }
 
 
