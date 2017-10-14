@@ -1,5 +1,6 @@
 package main.java.Model;
 
+import javafx.scene.image.Image;
 import main.java.Model.Items.Item;
 import javafx.scene.paint.Color;
 import main.java.Model.Items.ItemEnum;
@@ -8,7 +9,7 @@ import main.java.Model.Tiles.TileEnum;
 
 import java.util.ArrayList;
 
-public class Player {
+public class Player extends Occupant{
 
     private int health;
     private int temp;
@@ -20,6 +21,8 @@ public class Player {
     private int locX;
     private int locY;
     private ArrayList<ItemStackObject> inventory;
+
+    private static Image playerImage;
 
     private static final Player player = new Player();
 
@@ -34,6 +37,7 @@ public class Player {
 
         inventory = new ArrayList<ItemStackObject>(20);
         inventory.add(new ItemStackObject(ItemEnum.IRON_ORE, 5));
+        playerImage = new Image("File:./assets/Player.png", 53, 53, true, true);
     }
 
     public static Player getPlayer() {
@@ -63,32 +67,40 @@ public class Player {
     public boolean moveUp() {
         if (locY == 0) return false;
         if (!validMove(locX, locY - 1)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locY--;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 
     public boolean moveDown() {
         if (locY == GameManager.getInstance().getTileManager().getWidthHeight() - 1) return false;
         if (!validMove(locX, locY + 1)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locY++;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 
     public boolean moveRight() {
         if (locX == GameManager.getInstance().getTileManager().getWidthHeight() - 1) return false;
         if (!validMove(locX + 1, locY)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locX++;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 
     public boolean moveLeft() {
         if (locX == 0) return false;
         if (!validMove(locX -1, locY)) return false;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
         locX--;
         energy -= energyRate;
+        GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(this);
         return true;
     }
 
@@ -169,5 +181,10 @@ public class Player {
 
     public ArrayList<ItemStackObject> getInventory() {
         return inventory;
+    }
+
+    @Override
+    public Image getOccupantImage() {
+        return playerImage;
     }
 }

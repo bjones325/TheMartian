@@ -5,13 +5,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import main.java.Model.GameManager;
+import main.java.Model.Occupant;
 
 import java.util.Random;
 
 public class Tile {
     private TileEnum terrainType;
 
-    private boolean occupied;
+    private Occupant occupant;
 
     private int x;
     private int y;
@@ -20,7 +21,7 @@ public class Tile {
 
     public Tile(TileEnum terrain, int x, int y) {
         terrainType = terrain;
-        occupied = false;
+        occupant = null;
         this.x = x;
         this.y = y;
     }
@@ -57,9 +58,8 @@ public class Tile {
     public StackPane getTileStackPane() {
         StackPane tilePane = new StackPane();
         tilePane.getChildren().add(new ImageView(terrainType.getImageView()));
-        if (x == GameManager.getInstance().getPlayer().getLocX() &&
-                y == GameManager.getInstance().getPlayer().getLocY()) {
-            tilePane.getChildren().add(new ImageView(new Image("File:./assets/Player.png", 53, 53, true, true)));
+        if (isOccupied()) {
+            tilePane.getChildren().add(new ImageView(occupant.getOccupantImage()));
         }
         return tilePane;
     }
@@ -71,6 +71,10 @@ public class Tile {
     public void setBuilding(Building building) { this.building = building; }
 
     public boolean isOccupied() {
-        return occupied;
+        return occupant != null;
+    }
+
+    public void setOccupant(Occupant c) {
+        occupant = c;
     }
 }
