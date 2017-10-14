@@ -12,6 +12,7 @@ public class GameScreen extends BorderPane {
     private static LeftPanel leftPanel;
     private static RightPanel rightPanel;
     private static MessageBox messageBox;
+    private static MapView mapView;
 
     private static GameScreen instance;
 
@@ -20,13 +21,22 @@ public class GameScreen extends BorderPane {
         leftPanel = new LeftPanel();
         rightPanel = new RightPanel();
         messageBox = new MessageBox();
+        mapView = new MapView();
         instance = this;
         setTop(topPanel.getRootNode());
         setLeft(leftPanel);
         setRight(rightPanel);
-        //setCenter(GridFX.getInstance());
+        setCenter(mapView);
         setBottom(messageBox);
         setMaxSize(700, 700);
+        updateMessageBox();
+    }
+
+    public void updateAllScreen() {
+        topPanel.update();
+        leftPanel.update();
+        rightPanel.updateInventory();
+        rightPanel.updateOptionsBox();
         updateMessageBox();
     }
 

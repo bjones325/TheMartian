@@ -5,7 +5,6 @@ public class MysteriousBlob extends Enemy {
         super(locX,locY);
         moveSpd = 1;
         attack = 1;
-        type  = EnemyTypeEnum.MYSTERIOUSBLOB;
         image = "MysteriousBlob.png";
         health = 100;
         name = "Mysterious Blob";
