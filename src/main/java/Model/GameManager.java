@@ -2,6 +2,7 @@ package main.java.Model;
 
 import main.java.Model.Enemies.Enemy;
 import main.java.Model.Enemies.EnemyManager;
+import main.java.Model.Tiles.Building;
 import main.java.Model.Tiles.BuildingManager;
 import main.java.Model.Tiles.TileManager;
 
@@ -12,9 +13,9 @@ public class GameManager {
     private int temperature;
     private Player player;
     private ChatManager chatManager;
-    private TileManager tm = TileManager.getInstance();
-    private EnemyManager em = EnemyManager.getInstance();
-    private BuildingManager bm = BuildingManager.getInstance();
+    private TileManager tm;
+    private EnemyManager em;
+    private BuildingManager bm;
 
     private static GameManager instance = new GameManager();
 
@@ -24,6 +25,9 @@ public class GameManager {
         date = 0;
         player = Player.getPlayer();
         chatManager = ChatManager.getInstance();
+        tm = TileManager.getInstance();
+        em = EnemyManager.getInstance();
+        bm = BuildingManager.getInstance();
 
     }
 
@@ -55,6 +59,10 @@ public class GameManager {
     public ChatManager getChatManager() {
         return chatManager;
     }
+
+    public TileManager getTileManager() { return tm;}
+
+    public EnemyManager getEnemyManager() { return em;}
 
     public void endOfTurnTick() {
         //When a player completes his turn it will call this
