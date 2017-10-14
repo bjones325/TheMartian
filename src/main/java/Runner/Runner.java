@@ -8,6 +8,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import main.java.Model.GameManager;
+import main.java.Model.Tiles.BuildingEnum;
+import main.java.Model.Tiles.BuildingManager;
 import main.java.View.GameScreen;
 
 public class Runner extends Application {
@@ -35,7 +37,9 @@ public class Runner extends Application {
             if (e.getCode() == KeyCode.SPACE) {
                 System.out.println("A key was pressed");
                 GameManager.getInstance().endOfTurnTick();
+                BuildingManager.getInstance().spawnBuilding(BuildingEnum.IRON_MINE, 10, 10);
                 screen.updateAllScreen();
+
             }
         });
     }
