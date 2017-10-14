@@ -12,6 +12,8 @@ public class Tile {
     private int x;
     private int y;
 
+    private Building building;
+
     public Tile(TileEnum terrain, int x, int y) {
         terrainType = terrain;
         this.x = x;
@@ -35,4 +37,10 @@ public class Tile {
         tilePane.getChildren().add(new ImageView(terrainType.getImageView()));
         return tilePane;
     }
+
+    public TileEnum getTileType() { return terrainType; }
+
+    public Building getBuilding() { return building; }
+
+    public void setBuilding(Building building) { this.building = building; }
 }

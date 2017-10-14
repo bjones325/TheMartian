@@ -11,6 +11,10 @@ public class IronMine extends Building {
         ironCount = 0;
     }
 
+    public IronMine() {
+        ironCount = 0;
+    }
+
     @Override
     public void onTick() {
         ironCount++;
