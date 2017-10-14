@@ -1,3 +1,5 @@
+package main.java.Model.Enemies;
+
 public abstract class Enemy {
     int moveSpd;
     int attack;
@@ -7,7 +9,9 @@ public abstract class Enemy {
     int locY;
     int health;
 
-    public Enemy() {
+    public Enemy(int locX, int locY) {
+        this.locX = locX;
+        this.locY = locY;
     }
 
   /*  public void move() {
