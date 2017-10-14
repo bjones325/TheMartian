@@ -145,7 +145,7 @@ public class Player {
         return false;
     }
 
-    private boolean getObject(ItemEnum kind, int amount) {
+    public boolean pickUpObject(ItemEnum kind, int amount) {
         //If we already have that item in inventory just increment it
         for (ItemStackObject item : inventory) {
             if (item.get_obj().equals(kind)) {

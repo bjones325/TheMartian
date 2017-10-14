@@ -1,9 +1,10 @@
 package main.java.Model.Items;
 
-public abstract class Blueprint extends Item {
-    public boolean buildable;
+public abstract class Blueprint {
+    public abstract boolean buildable();
+    String name;
 
     public Blueprint(String name) {
-        super(0,name);
+        this.name = name;
     }
 }
