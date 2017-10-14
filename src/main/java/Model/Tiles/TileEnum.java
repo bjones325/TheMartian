@@ -11,7 +11,7 @@ public enum TileEnum {
     LAVA(new Image("File:./assets/Lava.png")),
     SWAMP(new Image("File:./assets/Swamp.png")),
     THICKET(new Image("File:./assets/Thicket.png")),
-    MOUNTAIN(new Image("File:./assets/Mountain.png")),
+    MOUNTAIN(new Image("File:./assets/mtns.png")),
     GAS_VENT(new Image("File:./assets/Gasvent.png")),
     CRATER(new Image("File:./assets/Crater.png")),
     HILL(new Image("File:./assets/Ratios.png")),
