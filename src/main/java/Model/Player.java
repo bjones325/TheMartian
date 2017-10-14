@@ -47,21 +47,25 @@ public class Player {
     public void moveUp() {
         locY++;
         energy = energy - energyRate;
+        GameManager.getInstance().endOfTurnTick();
     }
 
     public void moveDown() {
         locY--;
         energy = energy - energyRate;
+        GameManager.getInstance().endOfTurnTick();
     }
 
     public void moveRight() {
         locX++;
         energy = energy - energyRate;
+        GameManager.getInstance().endOfTurnTick();
     }
 
     public void moveLeft() {
         locY--;
         energy = energy - energyRate;
+        GameManager.getInstance().endOfTurnTick();
     }
 
     public int getHealth() {

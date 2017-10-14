@@ -1,5 +1,7 @@
 package main.java.Model.Tiles;
 
+import main.java.Model.GameManager;
+
 public class Tile {
     private TileEnum terrainType;
     private int x;
@@ -9,5 +11,9 @@ public class Tile {
         terrainType = terrain;
         this.x = x;
         this.y = y;
+    }
+
+    public void effect(){
+        GameManager.getInstance().getPlayer().setTemp(GameManager.getInstance().getPlayer().getTemp() - 2);
     }
 }

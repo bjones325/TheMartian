@@ -6,9 +6,9 @@ public class TileManager {
 
     private Tile[][] map;
 
-    private TileManager tm;
+    private static TileManager instance = new TileManager();
 
-    public TileManager() {
+    private TileManager() {
         map = new Tile[width][height];
 
         for(int x = 0; x < width; x++) {
@@ -16,6 +16,10 @@ public class TileManager {
                 map[x][y] = new Tile(TileEnum.BASE, x, y);
             }
         }
+    }
+
+    public static TileManager getInstance() {
+        return instance;
     }
 
     public Tile getTile(int x, int y) {

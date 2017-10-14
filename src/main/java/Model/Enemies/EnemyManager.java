@@ -5,7 +5,14 @@ import java.util.LinkedList;
 
 public class EnemyManager {
     LinkedList<Enemy> enemies;
+
     private static EnemyManager instance = new EnemyManager();
+    public static EnemyManager getInstance() { return instance; }
+
+    private EnemyManager() {
+        enemies = new LinkedList<Enemy>();
+    }
+
     public void spawn(EnemyTypeEnum type, int locX, int locY ) {
         switch (type) {
             case MARTIANDOG : enemies.add(new MartianDog(locX,locY));

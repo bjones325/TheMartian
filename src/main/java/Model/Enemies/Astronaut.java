@@ -5,7 +5,6 @@ public class Astronaut extends Enemy {
         super(locX,locY);
         moveSpd = 1;
         attack = 1;
-        type  = EnemyTypeEnum.ASTRONAUT;
         image = "Astronaut.png";
         health = 100;
         name = "Astronaut";
