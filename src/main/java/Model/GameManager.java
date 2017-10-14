@@ -7,8 +7,6 @@ public class GameManager {
     private int temperature;
     private Player player;
 
-    private Player player;
-
     private static GameManager instance = new GameManager();
 
     private GameManager() {
@@ -41,9 +39,5 @@ public class GameManager {
             time = 0;
             date++;
         }
-    }
-
-    public Player getPlayer() {
-        return player;
     }
 }
