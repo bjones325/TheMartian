@@ -25,11 +25,12 @@ public class ItemManager {
     public void onTick() {
         for(Class item : blueprintList) {
             try {
-                if (((Item) item.newInstance()).getBp() != null) {
-                    System.out.println("Craftable");
+                Item tmp = (Item) item.newInstance();
+                if (tmp.getBp() != null && tmp.getBp().buildable() == true) {
+                    System.out.println("Craftable -- " + item.toString());
                 }
             } catch (Exception e){
-                int tmp = 0;
+                System.out.println("ERROR: Trying to find " + item.toString());
             }
 
         }
