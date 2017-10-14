@@ -11,8 +11,8 @@ public class GameManager {
     private int temperature;
     private Player player;
     private ChatManager chatManager;
-    private TileManager tm = TileManager.getInstance();
-    private EnemyManager em = EnemyManager.getInstance();
+    private TileManager tm;
+    private EnemyManager em;
 
     private static GameManager instance = new GameManager();
 
@@ -22,6 +22,8 @@ public class GameManager {
         date = 0;
         player = Player.getPlayer();
         chatManager = ChatManager.getInstance();
+        tm = TileManager.getInstance();
+        em = EnemyManager.getInstance();
 
     }
 
@@ -53,6 +55,10 @@ public class GameManager {
     public ChatManager getChatManager() {
         return chatManager;
     }
+
+    public TileManager getTileManager() { return tm;}
+
+    public EnemyManager getEnemyManager() { return em;}
 
     public void endOfTurnTick() {
         //When a player completes his turn it will call this
