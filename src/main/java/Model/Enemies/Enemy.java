@@ -1,5 +1,7 @@
 package main.java.Model.Enemies;
 
+import main.java.Model.GameManager;
+
 public abstract class Enemy {
     int moveSpd;
     int attack;
@@ -20,11 +22,12 @@ public abstract class Enemy {
     }
 
     public void onTick() {
+        this.move();
     }
-  /*  public void move() {
+    public void move() {
         //Placeholder move()
-        int playerX = Player.getLocX();
-        int playerY = Player.getLockY();
+        int playerX = GameManager.getInstance().getPlayer().getLocX();
+        int playerY = GameManager.getInstance().getPlayer().getLocY();
 
         int diffX = locX - playerX;
         int diffY = locY - playerY;
@@ -50,7 +53,7 @@ public abstract class Enemy {
             }
         }
 
-    } */
+    }
 
 
 }
