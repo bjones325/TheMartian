@@ -12,6 +12,7 @@ public class LeftPanel extends VBox {
         statBox = new StatBox();
         chunkMap = new ChunkMap();
         this.setSpacing(0.0);
+        this.setPrefSize(108, 500);
         update();
     }
 

@@ -13,6 +13,7 @@ public class RightPanel extends VBox {
         optionsView = new OptionsView();
         this.setSpacing(0.0);
         this.setAlignment(Pos.TOP_CENTER);
+        this.setPrefSize(108, 500);
         updateInventory();
         updateOptionsBox();
     }

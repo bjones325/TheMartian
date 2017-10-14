@@ -22,7 +22,7 @@ public class Runner extends Application {
         primaryStage.setTitle("The Martian");
         GameScreen screen = new GameScreen();
 
-        Scene scene = new Scene(screen, 900 , 1600);
+        Scene scene = new Scene(screen, 800 , 700);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -47,6 +47,7 @@ public class Runner extends Application {
             GameManager.getInstance().endOfTurnTick();
             screen.updateAllScreen();
         });
+        System.out.println(scene.getWidth() + "--" + scene.getHeight());
     }
 
 

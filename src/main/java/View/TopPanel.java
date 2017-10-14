@@ -17,7 +17,7 @@ public class TopPanel {
     }
 
     public void update() {
-        infoPanel.setSpacing(810.0);
+        infoPanel.setSpacing(710.0);
         infoPanel.getChildren().clear();
         Label date = new Label("Sol " + GameManager.getInstance().getDate() + " - " + GameManager.getInstance().getTime() + ":00");
         Label temperature = new Label(GameManager.getInstance().getTemperature() + "°F");
