@@ -21,8 +21,12 @@ public class Runner extends Application {
 
         primaryStage.setTitle("The Martian");
         GameScreen screen = new GameScreen();
-
+        //primaryStage.setWidth(810);
+        //primaryStage.setHeight(710);
         Scene scene = new Scene(screen, 800 , 700);
+        if (scene.getWidth() == 800 && scene.getWidth() == 700) {
+            scene = new Scene(screen, 810, 710);
+        }
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -47,7 +51,6 @@ public class Runner extends Application {
             GameManager.getInstance().endOfTurnTick();
             screen.updateAllScreen();
         });
-        System.out.println(scene.getWidth() + "--" + scene.getHeight());
     }
 
 

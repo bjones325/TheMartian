@@ -2,6 +2,7 @@ package main.java.Model;
 
 import main.java.Model.Enemies.Enemy;
 import main.java.Model.Enemies.EnemyManager;
+import main.java.Model.Items.ItemManager;
 import main.java.Model.Tiles.*;
 import main.java.View.GameScreen;
 
@@ -15,6 +16,7 @@ public class GameManager {
     private TileManager tm;
     private EnemyManager em;
     private BuildingManager bm;
+    private ItemManager im;
 
     private static GameManager instance = new GameManager();
 
@@ -28,6 +30,7 @@ public class GameManager {
         tm = TileManager.getInstance();
         em = EnemyManager.getInstance();
         bm = BuildingManager.getInstance();
+        im = ItemManager.getInstance();
 
     }
 
@@ -83,6 +86,7 @@ public class GameManager {
         em.onTick();
         bm.onTick();
         tm.getTile(getPlayer().getLocX(), getPlayer().getLocY()).effect();
+        im.onTick();
         incrementTime();
 
         GameScreen.updateAllScreen();
