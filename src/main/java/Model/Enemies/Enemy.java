@@ -29,7 +29,6 @@ public abstract class Enemy {
 
     protected int moveSpd;
     protected int attack;
-    EnemyTypeEnum type;
     String image;
     protected int locX;
     protected int locY;
@@ -41,15 +40,11 @@ public abstract class Enemy {
         this.locY = locY;
     }
 
-    public Enemy() {
-        locX = 0;
-        locY = 0;
-    }
-
     public void onTick() {
         this.move();
     }
-    public void move() {
+    public void move()
+    {
         //Placeholder move()
         int playerX = GameManager.getInstance().getPlayer().getLocX();
         int playerY = GameManager.getInstance().getPlayer().getLocY();
