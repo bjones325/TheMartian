@@ -10,6 +10,7 @@ public class GameManager {
     private int date;
     private int temperature;
     private Player player;
+    private ChatManager chatManager;
     private TileManager tm = TileManager.getInstance();
     private EnemyManager em = EnemyManager.getInstance();
 
@@ -20,6 +21,8 @@ public class GameManager {
         time = 0;
         date = 0;
         player = Player.getPlayer();
+        chatManager = ChatManager.getInstance();
+
     }
 
     public static GameManager getInstance() {
@@ -45,6 +48,10 @@ public class GameManager {
             time = 0;
             date++;
         }
+    }
+
+    public ChatManager getChatManager() {
+        return chatManager;
     }
 
     public void endOfTurnTick() {
