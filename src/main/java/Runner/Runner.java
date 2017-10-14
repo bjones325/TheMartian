@@ -4,7 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import main.java.Model.GameManager;
 import main.java.View.GameScreen;
 
 public class Runner extends Application {
@@ -23,6 +25,8 @@ public class Runner extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         stage = primaryStage;
+        GameManager.getInstance().getChatManager().addMessage("What", Color.BLACK);
+        GameManager.getInstance().getChatManager().addMessage("is this!", Color.BLACK);
     }
 
 
