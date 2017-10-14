@@ -2,10 +2,6 @@ package main.java.Model.Items;
 
 public abstract class Weapon extends Item {
 
-    public int getDamage() { return damage; }
-
-    public int getRange() { return range; }
-
     protected int damage;
     protected int range;
 
@@ -15,4 +11,8 @@ public abstract class Weapon extends Item {
         this.damage = damage;
         this.range = range;
     }
+
+    public int getDamage() { return damage; }
+
+    public int getRange() { return range; }
 }

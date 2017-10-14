@@ -34,13 +34,16 @@ public class Tile {
             case LAVA:
                 GameManager.getInstance().getPlayer().setTemp(GameManager.getInstance().getPlayer().getTemp() + 10);
                 GameManager.getInstance().getPlayer().setHealth(GameManager.getInstance().getPlayer().getHealth() - 20);
+                GameManager.getInstance().getChatManager().addMessage("The heat from the lava is almost unbearable...", Color.RED);
                 break;
             case TUNDRA:
                 GameManager.getInstance().getPlayer().setTemp(GameManager.getInstance().getPlayer().getTemp() - 20);
+                GameManager.getInstance().getChatManager().addMessage("The tundra is frigid. You need to find some heat!", Color.RED);
                 break;
             case DESERT:
                 GameManager.getInstance().getPlayer().setTemp(GameManager.getInstance().getPlayer().getTemp() + 5);
                 GameManager.getInstance().getPlayer().setThirst(GameManager.getInstance().getPlayer().getThirst() - 2);
+                GameManager.getInstance().getChatManager().addMessage("The desert makes you consider your dwindling supply of water...", Color.RED);
                 break;
             case SWAMP:
                 break;
