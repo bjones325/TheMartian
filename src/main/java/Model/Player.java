@@ -48,7 +48,7 @@ public class Player {
     }
 
     private boolean validMove(int x, int y) {
-        if (GameManager.getInstance().getTileManager().getTile(locX, locY + 1).isOccupied()) {
+        if (GameManager.getInstance().getTileManager().getTile(x, y).isOccupied()) {
             GameManager.getInstance().getChatManager().addMessage("It seems this tile is occupied...", Color.RED);
             return false;
         }
@@ -56,23 +56,23 @@ public class Player {
     }
 
     public boolean moveUp() {
-        if (locY == GameManager.getInstance().getTileManager().getWidthHeight()) return false;
-        if (!validMove(locX, locY + 1)) return false;
+        if (locY == 0) return false;
+        if (!validMove(locX, locY - 1)) return false;
         locY--;
         energy -= energyRate;
         return true;
     }
 
     public boolean moveDown() {
-        if (locY == 0) return false;
-        if (!validMove(locX, locY - 1)) return false;
+        if (locY == GameManager.getInstance().getTileManager().getWidthHeight() - 1) return false;
+        if (!validMove(locX, locY + 1)) return false;
         locY++;
         energy -= energyRate;
         return true;
     }
 
     public boolean moveRight() {
-        if (locX == GameManager.getInstance().getTileManager().getWidthHeight()) return false;
+        if (locX == GameManager.getInstance().getTileManager().getWidthHeight() - 1) return false;
         if (!validMove(locX + 1, locY)) return false;
         locX++;
         energy -= energyRate;
@@ -138,7 +138,7 @@ public class Player {
     public boolean hasItemNum(int num, ItemEnum type) {
         //Checks if player has certain amount of certain item (used for blueprints)
         for (ItemStackObject temp:inventory) {
-            if (temp.get_obj()==type && temp.get_amount() >= num) {
+            if (temp.get_obj()== type && temp.get_amount() >= num) {
                 return true;
             }
         }
