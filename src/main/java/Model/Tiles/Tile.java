@@ -22,12 +22,7 @@ public class Tile {
 
     public StackPane getTileStackPane() {
         StackPane tilePane = new StackPane();
-        Color col = Color.BLUE;
-        if (x % 2 == 0) {
-            col = Color.RED;
-        }
-        tilePane.getChildren().add(new Rectangle(64,64, col));
-        //tilePane.getChildren().add(te)
+        tilePane.getChildren().add(terrainType.getImageView());
         return tilePane;
     }
 }
