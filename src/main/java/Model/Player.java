@@ -1,13 +1,15 @@
+package main.java.Model;
+
 public class Player {
-    int health;
-    int temp;
-    int thirst;
-    int energy;
+    private int health;
+    private int temp;
+    private int thirst;
+    private int energy;
 
-    int energyRate;
+    private int energyRate;
 
-    int locX;
-    int locY;
+    private int locX;
+    private int locY;
 
     public Player() {
         health = 100;
