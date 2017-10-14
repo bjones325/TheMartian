@@ -19,7 +19,6 @@ public class StatBox extends VBox {
     }
 
     public void update() {
-        System.out.println(javafx.scene.text.Font.getFamilies());
         this.getChildren().clear();
         setPadding(new Insets(10, 10, 0, 10));
         healthLabel = new Label("Health: " + GameManager.getInstance().getPlayer().getHealth());
