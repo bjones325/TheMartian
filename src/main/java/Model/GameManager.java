@@ -6,12 +6,15 @@ public class GameManager {
     private int date;
     private int temperature;
 
+    private Player player;
+
     private static GameManager instance = new GameManager();
 
     private GameManager() {
         instance = this;
         time = 0;
         date = 0;
+        player = new Player();
     }
 
     public static GameManager getInstance() {
@@ -35,5 +38,9 @@ public class GameManager {
             time = 0;
             date++;
         }
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 }

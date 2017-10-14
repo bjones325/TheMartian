@@ -1,4 +1,7 @@
+package main.java.Model;
+
 public class Player {
+
     int health;
     int temp;
     int thirst;
