@@ -13,7 +13,7 @@ public abstract class Item {
         this.bp = bp;
     }
 
-    public Blueprint bp;
+    public Blueprint bp = null;
 
     protected int weight;
     protected String name;
