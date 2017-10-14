@@ -24,13 +24,19 @@ public class Runner extends Application {
         //primaryStage.setWidth(810);
         //primaryStage.setHeight(710);
         Scene scene = new Scene(screen, 800 , 700);
-        if (scene.getWidth() == 800 && scene.getWidth() == 700) {
-            scene = new Scene(screen, 810, 710);
-        }
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
         stage = primaryStage;
+        System.out.println(scene.getWidth() + "--" + scene.getHeight());
+        if (scene.getWidth() == 810 && scene.getHeight() == 710) {
+            GameScreen splen = new GameScreen();
+            scene = new Scene(splen, 810, 710);
+            primaryStage.setResizable(false);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            stage = primaryStage;
+        }
         GameManager.getInstance().getChatManager().addMessage("You slowly open your eyes...", Color.BLACK);
         GameManager.getInstance().getChatManager().addMessage("Your head hurts and you remember nothing...", Color.BLACK);
         GameManager.getInstance().getChatManager().addMessage("You look around...", Color.BLACK);
@@ -51,6 +57,7 @@ public class Runner extends Application {
             GameManager.getInstance().endOfTurnTick();
             screen.updateAllScreen();
         });
+        System.out.println(scene.getWidth() + "--" + scene.getHeight());
     }
 
 
