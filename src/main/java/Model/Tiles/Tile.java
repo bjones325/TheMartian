@@ -35,4 +35,6 @@ public class Tile {
         tilePane.getChildren().add(new ImageView(terrainType.getImageView()));
         return tilePane;
     }
+
+    public TileEnum getTileType() { return terrainType; }
 }

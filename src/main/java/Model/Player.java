@@ -1,5 +1,8 @@
 package main.java.Model;
 
+import main.java.Model.Items.ItemEnum;
+import main.java.Model.Items.ItemStackObject;
+
 import java.util.ArrayList;
 
 public class Player {
