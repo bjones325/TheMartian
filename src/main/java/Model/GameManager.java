@@ -14,7 +14,7 @@ public class GameManager {
         instance = this;
         time = 0;
         date = 0;
-        player = new Player();
+        player = Player.getPlayer();
     }
 
     public static GameManager getInstance() {

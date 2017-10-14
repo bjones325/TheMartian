@@ -16,7 +16,9 @@ public class LeftPanel extends VBox {
     }
 
     public void update() {
+        this.getChildren().clear();
         statBox.update();
         chunkMap.update();
+        this.getChildren().addAll(statBox, chunkMap);
     }
 }
