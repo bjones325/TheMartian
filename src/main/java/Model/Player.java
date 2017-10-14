@@ -1,7 +1,6 @@
 package main.java.Model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Player {
 
@@ -14,7 +13,7 @@ public class Player {
 
     private int locX;
     private int locY;
-    private List<ItemStackObject> inventory;
+    private ArrayList<ItemStackObject> inventory;
 
     private static final Player player = new Player();
 
@@ -128,5 +127,9 @@ public class Player {
         inventory.add(tmp);
 
         return true;
+    }
+
+    public ArrayList<ItemStackObject> getInventory() {
+        return inventory;
     }
 }
