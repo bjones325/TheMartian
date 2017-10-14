@@ -21,6 +21,10 @@ public class Tile {
         occupant = null;
         this.x = x;
         this.y = y;
+        if (x == GameManager.getInstance().getPlayer().getLocX() &&
+                y == GameManager.getInstance().getPlayer().getLocY()) {
+            occupant = GameManager.getInstance().getPlayer();
+        }
     }
 
     public void effect(){
