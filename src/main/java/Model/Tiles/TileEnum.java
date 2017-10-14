@@ -19,7 +19,7 @@ public enum TileEnum {
     URANIUM_VEIN(new Image("File:./assets/UraniumVain.png", 53, 53, true, true));
     private Image view;
 
-    private TileEnum(Image iv) {
+    TileEnum(Image iv) {
         view = iv;
     }
 

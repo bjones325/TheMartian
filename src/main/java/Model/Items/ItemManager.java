@@ -12,6 +12,8 @@ public class ItemManager {
 
     public static ItemManager getInstance() { return instance; }
 
+    private List<String> craftableList = new ArrayList<>();
+
     private ItemManager() {
         blueprintList.add(AlienPistol.class);
         blueprintList.add(IronMineCraft.class);
@@ -23,16 +25,21 @@ public class ItemManager {
     }
 
     public void onTick() {
+        craftableList.clear();
         for(Class item : blueprintList) {
             try {
                 Item tmp = (Item) item.newInstance();
                 if (tmp.getBp() != null && tmp.getBp().buildable() == true) {
-                    System.out.println("Craftable -- " + item.toString());
+                    craftableList.add(item.toString().substring(28));
                 }
             } catch (Exception e){
                 System.out.println("ERROR: Trying to find " + item.toString());
             }
 
         }
+    }
+
+    public List<String> getCraftableList() {
+        return craftableList;
     }
 }
