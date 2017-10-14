@@ -1,4 +1,14 @@
 package main.java.View;
 
-public class ChunkMap {
+import javafx.scene.layout.BorderPane;
+
+public class ChunkMap extends BorderPane {
+
+    public ChunkMap() {
+
+    }
+
+    public void update() {
+
+    }
 }
