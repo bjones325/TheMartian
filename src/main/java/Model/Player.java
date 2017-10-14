@@ -21,6 +21,16 @@ public class Player {
         locY = 0;
     }
 
+    public int getLocX() {
+        return locX;
+    }
+
+    public int getLocY() {
+        return locY;
+    }
+
+
+
     public void moveUp() {
         locY++;
         energy = energy - energyRate;
