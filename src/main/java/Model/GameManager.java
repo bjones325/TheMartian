@@ -1,11 +1,14 @@
 package main.java.Model;
 
+import main.java.Model.Tiles.TileManager;
+
 public class GameManager {
 
     private int time;
     private int date;
     private int temperature;
     private Player player;
+    private TileManager tm = TileManager.getInstance();
 
     private static GameManager instance = new GameManager();
 
@@ -34,10 +37,18 @@ public class GameManager {
 
     public Player getPlayer() { return player; }
 
-    public void incrementTime() {
+    private void incrementTime() {
         if (++time % 24 == 0) {
             time = 0;
             date++;
         }
+    }
+
+    public void endOfTurnTick() {
+        //When a player completes his turn it will call this
+
+        //em.move();
+        tm.getTile(getPlayer().getLocX(), getPlayer().getLocY()).effect();
+        incrementTime();
     }
 }
