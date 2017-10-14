@@ -24,7 +24,7 @@ public class ChatManager {
     public void addMessage(String msg, Color c) {
         Label l = new Label(msg);
         l.setTextFill(c);
-        l.setFont(Font.font("Arial", FontWeight.BOLD, 12));
+        l.setFont(Font.font("Agency FB", FontWeight.NORMAL, 15));
         chatQueue.add(l);
         if (chatQueue.size() > 7) {
             chatQueue.removeLast();

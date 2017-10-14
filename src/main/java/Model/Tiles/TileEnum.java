@@ -1,15 +1,13 @@
 package main.java.Model.Tiles;
 
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import main.java.Model.Enemies.MartianDog;
 
 public enum TileEnum {
 
     BASE(new Image("File:./assets/desert.png")),
     TUNDRA(new Image("File:./assets/Tundra.png")),
     WATER(new Image("File:./assets/Water.png")),
-    DESERT(new Image("File:./assets/desert.png")),
+    DESERT(new Image("File:./assets/Base.png")),
     LAVA(new Image("File:./assets/Lava.png")),
     SWAMP(new Image("File:./assets/Swamp.png")),
     THICKET(new Image("File:./assets/Thicket.png")),

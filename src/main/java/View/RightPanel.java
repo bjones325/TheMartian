@@ -1,5 +1,6 @@
 package main.java.View;
 
+import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
 public class RightPanel extends VBox {
@@ -11,6 +12,7 @@ public class RightPanel extends VBox {
         InvBox = new InvView();
         optionsView = new OptionsView();
         this.setSpacing(0.0);
+        this.setAlignment(Pos.TOP_CENTER);
         updateInventory();
         updateOptionsBox();
     }
