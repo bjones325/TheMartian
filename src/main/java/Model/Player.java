@@ -138,7 +138,7 @@ public class Player {
     public boolean hasItemNum(int num, ItemEnum type) {
         //Checks if player has certain amount of certain item (used for blueprints)
         for (ItemStackObject temp:inventory) {
-            if (temp.get_obj()==type && temp.get_amount() >= num) {
+            if (temp.get_obj()== type && temp.get_amount() >= num) {
                 return true;
             }
         }
