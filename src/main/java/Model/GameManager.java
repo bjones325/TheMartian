@@ -5,6 +5,7 @@ import main.java.Model.Enemies.EnemyManager;
 import main.java.Model.Tiles.Building;
 import main.java.Model.Tiles.BuildingManager;
 import main.java.Model.Tiles.TileManager;
+import main.java.View.GameScreen;
 
 public class GameManager {
 
@@ -71,5 +72,7 @@ public class GameManager {
         bm.onTick();
         tm.getTile(getPlayer().getLocX(), getPlayer().getLocY()).effect();
         incrementTime();
+
+        GameScreen.updateAllScreen();
     }
 }

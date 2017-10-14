@@ -17,7 +17,7 @@ public class MessageBox extends VBox {
         LinkedList<Label> chatQueue = GameManager.getInstance().getChatManager().getChatQueue();
         int i = 0;
         for (Label l : chatQueue) {
-            //l.setOpacity((i / 5.0) + 0.2);
+            l.setOpacity((i / 5.0) + 0.4);
             getChildren().add(l);
             i++;
         }

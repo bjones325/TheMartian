@@ -33,7 +33,6 @@ public class Tile {
     public StackPane getTileStackPane() {
         StackPane tilePane = new StackPane();
         tilePane.getChildren().add(new ImageView(terrainType.getImageView()));
-        //tilePane.getChildren().add(new Rectangle(64, 64, Color.BLUE));
         return tilePane;
     }
 }
