@@ -5,6 +5,7 @@ public class GameManager {
     private int time;
     private int date;
     private int temperature;
+    private Player player;
 
     private static GameManager instance = new GameManager();
 
@@ -12,6 +13,7 @@ public class GameManager {
         instance = this;
         time = 0;
         date = 0;
+        player = new Player();
     }
 
     public static GameManager getInstance() {
@@ -29,6 +31,8 @@ public class GameManager {
     public int getTemperature() {
         return temperature;
     }
+
+    public Player getPlayer() { return player; }
 
     public void incrementTime() {
         if (++time % 24 == 0) {
