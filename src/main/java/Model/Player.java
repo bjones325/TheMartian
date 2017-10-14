@@ -43,6 +43,8 @@ public class Player {
         return locY;
     }
 
+
+
     public void moveUp() {
         locY++;
         energy = energy - energyRate;
@@ -110,7 +112,6 @@ public class Player {
     public void setLocY(int locY) {
         this.locY = locY;
     }
-
 
     private boolean getObject(ItemEnum kind, int amount) {
         //If we already have that item in inventory just increment it
