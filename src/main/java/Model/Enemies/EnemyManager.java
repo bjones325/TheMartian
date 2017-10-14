@@ -11,12 +11,15 @@ public class EnemyManager {
 
     private EnemyManager() {
         enemies = new LinkedList<Enemy>();
-        spawn(EnemyTypeEnum.MARTIANDOG, 53, 52);
+        spawn(EnemyTypeEnum.MARTIAN_DOG, 53, 52);
     }
 
     public void spawn(EnemyTypeEnum type, int locX, int locY ) {
         switch (type) {
-            case MARTIANDOG : enemies.add(new MartianDog(locX,locY));
+            case MARTIAN_DOG : enemies.add(new MartianDog(locX,locY));
+            case ASTRONAUT : enemies.add(new Astronaut(locX,locY));
+            case MYSTERIOUS_BLOB : enemies.add(new MysteriousBlob(locX,locY));
+            case ALIEN : enemies.add(new Alien(locX,locY));
         }
     }
 

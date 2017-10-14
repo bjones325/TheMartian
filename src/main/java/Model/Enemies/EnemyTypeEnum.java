@@ -1,8 +1,8 @@
 package main.java.Model.Enemies;
 
 public enum EnemyTypeEnum {
-    MARTIANDOG,
+    MARTIAN_DOG,
     ASTRONAUT,
-    MYSTERIOUSBLOB,
+    MYSTERIOUS_BLOB,
     ALIEN
 }
