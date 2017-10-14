@@ -25,11 +25,9 @@ public class MapView extends GridPane {
         if (top < 0) {
             top = 0;
             bottom = 10;
-            System.out.println("REACHED TOP");
         } else if (bottom > max) {
             top = max - 10;
             bottom = max;
-            System.out.println("REACHED BOT");
         }
 
         if (left < 0) {

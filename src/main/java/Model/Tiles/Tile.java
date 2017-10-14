@@ -39,7 +39,7 @@ public class Tile {
         tilePane.getChildren().add(new ImageView(terrainType.getImageView()));
         if (x == GameManager.getInstance().getPlayer().getLocX() &&
                 y == GameManager.getInstance().getPlayer().getLocY()) {
-            tilePane.getChildren().add(new ImageView(new Image("File:./assets/Ratios.png")));
+            tilePane.getChildren().add(new ImageView(new Image("File:./assets/Player.png")));
         }
         return tilePane;
     }
