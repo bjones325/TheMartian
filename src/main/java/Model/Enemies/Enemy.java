@@ -3,17 +3,24 @@ package main.java.Model.Enemies;
 public abstract class Enemy {
     int moveSpd;
     int attack;
-    String type;
+    EnemyTypeEnum type;
     String image;
     int locX;
     int locY;
     int health;
 
-    public Enemy(locX,locY) {
+    public Enemy(int locX,int locY) {
         this.locX = locX;
         this.locY = locY;
     }
 
+    public Enemy() {
+        locX = 0;
+        locY = 0;
+    }
+
+    public void onTick() {
+    }
   /*  public void move() {
         //Placeholder move()
         int playerX = Player.getLocX();
