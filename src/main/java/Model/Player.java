@@ -23,8 +23,8 @@ public class Player {
         thirst = 10;
         energy = 100;
 
-        locX = 500;
-        locY = 500;
+        locX = 50;
+        locY = 50;
 
         inventory = new ArrayList<ItemStackObject>(20);
         inventory.add(new ItemStackObject(ItemEnum.IRON_ORE, 5));

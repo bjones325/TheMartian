@@ -2,6 +2,7 @@ package main.java.Model;
 
 import main.java.Model.Enemies.Enemy;
 import main.java.Model.Enemies.EnemyManager;
+import main.java.Model.Tiles.BuildingManager;
 import main.java.Model.Tiles.TileManager;
 
 public class GameManager {
@@ -13,6 +14,7 @@ public class GameManager {
     private ChatManager chatManager;
     private TileManager tm = TileManager.getInstance();
     private EnemyManager em = EnemyManager.getInstance();
+    private BuildingManager bm = BuildingManager.getInstance();
 
     private static GameManager instance = new GameManager();
 
@@ -58,6 +60,7 @@ public class GameManager {
         //When a player completes his turn it will call this
 
         em.onTick();
+        bm.onTick();
         tm.getTile(getPlayer().getLocX(), getPlayer().getLocY()).effect();
         incrementTime();
     }

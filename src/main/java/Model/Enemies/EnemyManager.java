@@ -11,7 +11,7 @@ public class EnemyManager {
 
     private EnemyManager() {
         enemies = new LinkedList<Enemy>();
-        spawn(EnemyTypeEnum.MARTIANDOG, 503, 502);
+        spawn(EnemyTypeEnum.MARTIANDOG, 53, 52);
     }
 
     public void spawn(EnemyTypeEnum type, int locX, int locY ) {
