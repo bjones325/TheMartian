@@ -1,8 +1,9 @@
 package main.java.Model.Enemies;
 
 import main.java.Model.GameManager;
+import main.java.Model.Occupant;
 
-public abstract class Enemy {
+public abstract class Enemy  extends Occupant {
     public int getLocX() {
         return locX;
     }
@@ -51,33 +52,6 @@ public abstract class Enemy {
     }
 
     public void move() {
-        //Placeholder move()
-        int playerX = GameManager.getInstance().getPlayer().getLocX();
-        int playerY = GameManager.getInstance().getPlayer().getLocY();
-
-        int diffX = locX - playerX;
-        int diffY = locY - playerY;
-
-        if (diffX > diffY) {
-            if (diffX > 0) {
-                locX--;
-            } else if (diffX < 0) {
-                locX++;
-            }
-
-        } else if (diffY > diffX) {
-            if (diffY > 0) {
-                locY--;
-            } else if (diffY < 0) {
-                locY++;
-            }
-        } else {
-            if (diffY > 0) {
-                locY--;
-            } else if (diffY < 0) {
-                locY++;
-            }
-        }
 
     }
 
