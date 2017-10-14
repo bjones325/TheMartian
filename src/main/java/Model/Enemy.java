@@ -10,7 +10,7 @@ public abstract class Enemy {
     public Enemy() {
     }
 
-    public void move() {
+  /*  public void move() {
         //Placeholder move()
         int playerX = Player.getLocX();
         int playerY = Player.getLockY();
@@ -39,7 +39,7 @@ public abstract class Enemy {
             }
         }
 
-    }
+    } */
 
 
 }
