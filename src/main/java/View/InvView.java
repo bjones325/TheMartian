@@ -2,6 +2,7 @@ package main.java.View;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -16,9 +17,12 @@ public class InvView extends VBox {
 
     public void update() {
         this.getChildren().clear();
+
         Label invLab = new Label("INVENTORY");
-        invLab.setFont(Font.font("Agency FB", FontWeight.BOLD, 16));
-        this.getChildren().add(invLab);
+        invLab.setFont(Font.font("Agency FB", FontWeight.BOLD, 26));
+        StackPane sp = new StackPane(invLab);
+        sp.setAlignment(Pos.CENTER);
+        this.getChildren().add(sp);
         for (ItemStackObject stack : GameManager.getInstance().getPlayer().getInventory()) {
             Label l = new Label(stack.get_amount() + " x " + stack.get_obj().toString());
             this.getChildren().add(l);

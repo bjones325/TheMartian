@@ -1,7 +1,12 @@
 package main.java.View;
 
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class LeftPanel extends VBox {
 
@@ -18,8 +23,12 @@ public class LeftPanel extends VBox {
 
     public void update() {
         this.getChildren().clear();
+        Label invLab = new Label("STATUS");
+        invLab.setFont(Font.font("Agency FB", FontWeight.BOLD, 26));
+        StackPane sp = new StackPane(invLab);
+        sp.setAlignment(Pos.CENTER);
         statBox.update();
         chunkMap.update();
-        this.getChildren().addAll(statBox, chunkMap);
+        this.getChildren().addAll(sp, statBox, chunkMap);
     }
 }
