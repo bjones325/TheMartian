@@ -1,23 +1,33 @@
 package main.java.Model.Enemies;
 
+import main.java.Model.GameManager;
+
 public abstract class Enemy {
     int moveSpd;
     int attack;
-    String type;
+    EnemyTypeEnum type;
     String image;
     int locX;
     int locY;
     int health;
 
-    public Enemy(locX,locY) {
+    public Enemy(int locX,int locY) {
         this.locX = locX;
         this.locY = locY;
     }
 
-  /*  public void move() {
+    public Enemy() {
+        locX = 0;
+        locY = 0;
+    }
+
+    public void onTick() {
+        this.move();
+    }
+    public void move() {
         //Placeholder move()
-        int playerX = Player.getLocX();
-        int playerY = Player.getLockY();
+        int playerX = GameManager.getInstance().getPlayer().getLocX();
+        int playerY = GameManager.getInstance().getPlayer().getLocY();
 
         int diffX = locX - playerX;
         int diffY = locY - playerY;
@@ -43,7 +53,7 @@ public abstract class Enemy {
             }
         }
 
-    } */
+    }
 
 
 }
