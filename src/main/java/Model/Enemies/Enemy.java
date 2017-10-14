@@ -10,6 +10,7 @@ public abstract class Enemy {
     int locX;
     int locY;
     int health;
+    String name;
 
     public Enemy(int locX,int locY) {
         this.locX = locX;
