@@ -58,7 +58,7 @@ public class Player {
     public boolean moveUp() {
         if (locY == GameManager.getInstance().getTileManager().getWidthHeight()) return false;
         if (!validMove(locX, locY + 1)) return false;
-        locY++;
+        locY--;
         energy -= energyRate;
         return true;
     }
@@ -66,7 +66,7 @@ public class Player {
     public boolean moveDown() {
         if (locY == 0) return false;
         if (!validMove(locX, locY - 1)) return false;
-        locY--;
+        locY++;
         energy -= energyRate;
         return true;
     }
