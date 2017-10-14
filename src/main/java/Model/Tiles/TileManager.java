@@ -20,7 +20,7 @@ public class TileManager {
                 if(random.nextInt(3) == 0) {
                     map[x][y] = new Tile(TileEnum.BASE, x, y);
                 } else {
-                    map[x][y] = new Tile(TileEnum.values()[random.nextInt(12)], x, y);
+                    map[x][y] = new Tile(TileEnum.values()[random.nextInt(TileEnum.values().length)], x, y);
                 }
             }
         }
