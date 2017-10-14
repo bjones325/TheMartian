@@ -4,11 +4,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import main.java.Model.GameManager;
+import main.java.Model.Occupant;
 
 public class Tile {
     private TileEnum terrainType;
 
-    private boolean occupied;
+    private Occupant occupant;
 
     private int x;
     private int y;
@@ -17,7 +18,7 @@ public class Tile {
 
     public Tile(TileEnum terrain, int x, int y) {
         terrainType = terrain;
-        occupied = false;
+        occupant = null;
         this.x = x;
         this.y = y;
     }
@@ -51,6 +52,10 @@ public class Tile {
     public void setBuilding(Building building) { this.building = building; }
 
     public boolean isOccupied() {
-        return occupied;
+        return occupant != null;
+    }
+
+    public void setOccupant(Occupant c) {
+        occupant = c;
     }
 }

@@ -18,9 +18,12 @@ public class GameManager {
     private BuildingManager bm;
     private ItemManager im;
 
+    private boolean playersTurn;
+
     private static GameManager instance = new GameManager();
 
     private GameManager() {
+        playersTurn = false;
         instance = this;
         time = 0;
         date = 0;
@@ -31,7 +34,7 @@ public class GameManager {
         em = EnemyManager.getInstance();
         bm = BuildingManager.getInstance();
         im = ItemManager.getInstance();
-
+        playersTurn = true;
     }
 
     public static GameManager getInstance() {
@@ -90,5 +93,13 @@ public class GameManager {
         incrementTime();
 
         GameScreen.updateAllScreen();
+    }
+
+    public boolean isPlayersTurn() {
+        return playersTurn;
+    }
+
+    public void setPlayersTurn(boolean state) {
+        playersTurn = state;
     }
 }
