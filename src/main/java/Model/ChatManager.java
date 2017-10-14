@@ -26,7 +26,7 @@ public class ChatManager {
         l.setTextFill(c);
         l.setFont(Font.font("Agency FB", FontWeight.NORMAL, 15));
         chatQueue.add(l);
-        if (chatQueue.size() > 7) {
+        if (chatQueue.size() > 5) {
             chatQueue.removeLast();
         }
         GameScreen.updateMessageBox();

@@ -1,5 +1,6 @@
 package main.java.View;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -12,12 +13,16 @@ import java.util.LinkedList;
 
 public class MessageBox extends VBox {
 
+    public MessageBox() {
+        setPadding(new Insets(5,0,5,5));
+    }
+
     public void updateMessageBox() {
         getChildren().clear();
         LinkedList<Label> chatQueue = GameManager.getInstance().getChatManager().getChatQueue();
         int i = 0;
         for (Label l : chatQueue) {
-            l.setOpacity((i / 5.0) + 0.4);
+            l.setOpacity((i / 5.0) + 0.5);
             getChildren().add(l);
             i++;
         }
