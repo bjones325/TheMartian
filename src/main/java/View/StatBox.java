@@ -20,7 +20,7 @@ public class StatBox extends VBox {
 
     public void update() {
         this.getChildren().clear();
-        setPadding(new Insets(10, 10, 0, 10));
+        setPadding(new Insets(0, 10, 0, 10));
         healthLabel = new Label("Health: " + GameManager.getInstance().getPlayer().getHealth());
         healthLabel.setFont(Font.font("Agency FB", FontWeight.BOLD, 16));
         tempLabel = new Label("Warmth: " + GameManager.getInstance().getPlayer().getTemp());
