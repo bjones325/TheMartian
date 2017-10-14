@@ -1,5 +1,6 @@
 package main.java.Model.Tiles;
 
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -31,12 +32,7 @@ public class Tile {
 
     public StackPane getTileStackPane() {
         StackPane tilePane = new StackPane();
-        Color col = Color.BLUE;
-        if (x % 2 == 0) {
-            col = Color.RED;
-        }
-        tilePane.getChildren().add(new Rectangle(64,64, col));
-        //tilePane.getChildren().add(te)
+        tilePane.getChildren().add(new ImageView(terrainType.getImageView()));
         return tilePane;
     }
 

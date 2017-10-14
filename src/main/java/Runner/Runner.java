@@ -26,8 +26,10 @@ public class Runner extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         stage = primaryStage;
-        GameManager.getInstance().getChatManager().addMessage("What", Color.BLACK);
-        GameManager.getInstance().getChatManager().addMessage("is this!", Color.BLACK);
+        GameManager.getInstance().getChatManager().addMessage("You slowly open your eyes...", Color.BLACK);
+        GameManager.getInstance().getChatManager().addMessage("Your head hurts and you remember nothing...", Color.BLACK);
+        GameManager.getInstance().getChatManager().addMessage("You look around...", Color.BLACK);
+        GameManager.getInstance().getChatManager().addMessage("And notice you're on the surface of Mars!", Color.BLACK);
 
         scene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.SPACE) {

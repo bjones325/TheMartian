@@ -32,7 +32,7 @@ public class GameScreen extends BorderPane {
         updateMessageBox();
     }
 
-    public void updateAllScreen() {
+    public static void updateAllScreen() {
         topPanel.update();
         leftPanel.update();
         rightPanel.updateInventory();
