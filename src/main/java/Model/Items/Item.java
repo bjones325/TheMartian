@@ -13,4 +13,9 @@ public abstract class Item {
         this.name = name;
     }
 
+    public Item() {
+        weight = -1;
+        name = "";
+    }
+
 }

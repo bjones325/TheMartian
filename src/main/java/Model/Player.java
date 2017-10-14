@@ -1,5 +1,6 @@
 package main.java.Model;
 
+import main.java.Model.Items.Item;
 import main.java.Model.Items.ItemEnum;
 import main.java.Model.Items.ItemStackObject;
 
@@ -117,6 +118,16 @@ public class Player {
 
     public void setLocY(int locY) {
         this.locY = locY;
+    }
+
+    public boolean hasItemNum(int num, ItemEnum type) {
+        //Checks if player has certain amount of certain item (used for blueprints)
+        for (ItemStackObject temp:inventory) {
+            if (temp.get_obj()==type && temp.get_amount() >= num) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean getObject(ItemEnum kind, int amount) {

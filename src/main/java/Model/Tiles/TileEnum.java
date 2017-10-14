@@ -17,7 +17,8 @@ public enum TileEnum {
     GAS_VENT(new Image("File:./assets/Gasvent.png")),
     CRATER(new Image("File:./assets/Crater.png")),
     HILL(new Image("File:./assets/Ratios.png")),
-    IRON_MINE(new Image("File:./assets/IronMine.png"));
+    IRON_MINE(new Image("File:./assets/IronMine.png")),
+    IRON_VEIN(null);
 
     private Image view;
 
