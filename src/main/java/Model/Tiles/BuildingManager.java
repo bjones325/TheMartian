@@ -38,6 +38,8 @@ public class BuildingManager {
 
         buildingList.add(b);
 
+        TileManager.getInstance().getTile(posX, posY).setBuilding(b);
+
     }
 
     public void spawnBuilding(Building b) {
