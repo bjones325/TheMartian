@@ -26,7 +26,6 @@ public class Runner extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         stage = primaryStage;
-        System.out.println(scene.getWidth() + "--" + scene.getHeight());
         if (scene.getWidth() == 800 && scene.getHeight() == 700) {
             GameScreen splen = new GameScreen();
             scene = new Scene(splen, 810, 710);
