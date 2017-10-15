@@ -1,7 +1,7 @@
 package main.java.Model.Items;
 
 public abstract class Item {
-    public Blueprint bp = null;
+    private Blueprint bp = null;
 
     protected int weight;
     protected String name;

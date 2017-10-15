@@ -5,6 +5,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import main.java.Model.GameManager;
+import main.java.Model.Items.Item;
+import main.java.Model.Items.ItemStackObject;
 import main.java.Model.Occupant;
 
 import java.util.Random;
@@ -18,6 +20,8 @@ public class Tile {
     private int y;
 
     private Building building;
+
+    private ItemStackObject item;
 
     public Tile(TileEnum terrain, int x, int y) {
         terrainType = terrain;
@@ -65,6 +69,13 @@ public class Tile {
         if (isOccupied()) {
             tilePane.getChildren().add(new ImageView(occupant.getOccupantImage()));
         }
+        if (building != null) {
+            tilePane.getChildren().add(new ImageView(building.getBuildingType().getBuildingImg()));
+        }
+
+        if (hasItemStack()) {
+            tilePane.getChildren().add(new ImageView(new Image("File:./assets/ItemOverlay.png", 53, 53, true, true)));
+        }
         return tilePane;
     }
 
@@ -81,4 +92,6 @@ public class Tile {
     public void setOccupant(Occupant c) {
         occupant = c;
     }
+
+    public boolean hasItemStack() { return item != null; }
 }
