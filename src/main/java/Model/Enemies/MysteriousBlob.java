@@ -13,7 +13,7 @@ public class MysteriousBlob extends Enemy {
         image = "MysteriousBlob.png";
         health = 100;
         name = "Mysterious Blob";
-        occupantImage = new Image("File:./assets/Blob.png", 53, 53, true, true);
+        occupantImage = new Image("File:./assets/MysteriousBlob.png", 53, 53, true, true);
     }
 
     @Override
