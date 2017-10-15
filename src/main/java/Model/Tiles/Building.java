@@ -20,5 +20,9 @@ public abstract class Building {
         this.buildingType = buildingType;
     }
 
+    public BuildingEnum getBuildingType() {
+        return buildingType;
+    }
+
 
 }

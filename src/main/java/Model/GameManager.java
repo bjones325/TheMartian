@@ -3,6 +3,7 @@ package main.java.Model;
 import javafx.scene.paint.Color;
 import main.java.Model.Enemies.Enemy;
 import main.java.Model.Enemies.EnemyManager;
+import main.java.Model.Enemies.EnemyTypeEnum;
 import main.java.Model.Items.ItemManager;
 import main.java.Model.Tiles.*;
 import main.java.View.GameScreen;
