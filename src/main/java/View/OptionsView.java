@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import main.java.Model.Enemies.Enemy;
+import main.java.Model.GameManager;
 import main.java.Model.Items.Item;
 import main.java.Model.Items.ItemManager;
 
@@ -22,13 +24,26 @@ public class OptionsView extends VBox {
         optionLab.setFont(Font.font("Agency FB", FontWeight.BOLD, 26));
         this.getChildren().add(optionLab);
         this.setAlignment(Pos.BOTTOM_CENTER);
+        if (GameManager.getInstance().getSelectedTile() != null &&
+                GameManager.getInstance().getSelectedTile().isOccupied() &&
+                GameManager.getInstance().getSelectedTile().getOccupant() instanceof Enemy) {
+            Enemy e = (Enemy) GameManager.getInstance().getSelectedTile().getOccupant();
+            Label l = new Label("Attack Enemy");
+            l.setOnMouseClicked(z -> {
+                GameManager.getInstance().getPlayer().attack(e);
+                GameManager.getInstance().setPlayersTurn(false);
+                GameManager.getInstance().endOfTurnTick();
+                GameScreen.updateAllScreen();
+                GameManager.getInstance().setPlayersTurn(true);
+            });
+            getChildren().add(l);
+        }
 
         for(Class craftable : ItemManager.getInstance().getCraftableList()) {
             Label l = new Label(craftable.toString().substring(28));
             l.setOnMouseClicked(new EventHandler<MouseEvent>(){
                 @Override
                 public void handle(MouseEvent arg0) {
-                    System.out.println("Crafted " + craftable.toString().substring(28));
                     try {
                         ((Item) craftable.newInstance()).onCraft();
                         GameScreen.updateAllScreen();

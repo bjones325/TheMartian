@@ -83,6 +83,9 @@ public class Tile {
         if (hasItemStack()) {
             tilePane.getChildren().add(new ImageView(new Image("File:./assets/ItemOverlay.png", 53, 53, true, true)));
         }
+        tilePane.setOnMouseClicked(e -> {
+            GameManager.getInstance().setSelectedTile(this);
+        });
         return tilePane;
     }
 
@@ -91,13 +94,14 @@ public class Tile {
     public Building getBuilding() { return building; }
 
     public void setBuilding(Building building) {
-        System.out.println("BUILT");
         this.building = building;
     }
 
     public boolean isOccupied() {
         return occupant != null;
     }
+
+    public Occupant getOccupant() { return occupant;}
 
     public void setOccupant(Occupant c) {
         occupant = c;
