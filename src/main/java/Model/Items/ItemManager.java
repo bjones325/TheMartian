@@ -12,7 +12,7 @@ public class ItemManager {
 
     public static ItemManager getInstance() { return instance; }
 
-    private List<String> craftableList = new ArrayList<>();
+    private List<Class> craftableList = new ArrayList<>();
 
     private ItemManager() {
         blueprintList.add(AlienPistol.class);
@@ -30,7 +30,7 @@ public class ItemManager {
             try {
                 Item tmp = (Item) item.newInstance();
                 if (tmp.getBp() != null && tmp.getBp().buildable() == true) {
-                    craftableList.add(item.toString().substring(28));
+                    craftableList.add(item);
                 }
             } catch (Exception e){
                 System.out.println("ERROR: Trying to find " + item.toString());
@@ -39,7 +39,7 @@ public class ItemManager {
         }
     }
 
-    public List<String> getCraftableList() {
+    public List<Class> getCraftableList() {
         return craftableList;
     }
 }
