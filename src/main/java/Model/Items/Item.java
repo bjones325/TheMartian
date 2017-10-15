@@ -13,7 +13,6 @@ public abstract class Item {
     }
 
     public Item() {
-        onCraft();
         weight = 0;
         name = "";
     }
