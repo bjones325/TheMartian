@@ -17,8 +17,9 @@ public class Well extends Building {
     @Override
     public void onTick() {
         System.out.print("ontick");
-        if(GameManager.getInstance().getPlayer().getLocX() == super.getX() && GameManager.getInstance().getPlayer().getLocX() == super.getY()){
+        if (x == GameManager.getInstance().getPlayerLoc()[0] && y == GameManager.getInstance().getPlayerLoc()[1]) {
             GameManager.getInstance().getPlayer().refillWater();
+
         }
     }
 

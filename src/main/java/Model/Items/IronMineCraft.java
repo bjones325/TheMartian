@@ -12,6 +12,7 @@ public class IronMineCraft extends Item {
     @Override
     public void onCraft() {
         int[] loc = GameManager.getInstance().getPlayerLoc();
+        GameManager.getInstance().getPlayer().pickUpObject(ItemEnum.IRON_ORE, -15);
         BuildingManager.getInstance().spawnBuilding(BuildingEnum.IRON_MINE, loc[0], loc[1]);
     }
 }

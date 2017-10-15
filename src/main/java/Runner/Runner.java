@@ -5,12 +5,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import main.java.Model.GameManager;
 import main.java.Model.Tiles.BuildingEnum;
 import main.java.Model.Tiles.BuildingManager;
 import main.java.View.GameScreen;
+
+import java.io.File;
+import java.nio.file.Paths;
 
 public class Runner extends Application {
 
@@ -38,6 +43,9 @@ public class Runner extends Application {
         GameManager.getInstance().getChatManager().addMessage("Your head hurts and you remember nothing...", Color.BLACK);
         GameManager.getInstance().getChatManager().addMessage("You look around...", Color.BLACK);
         GameManager.getInstance().getChatManager().addMessage("And notice you're on the surface of Mars!", Color.BLACK);
+        //Media sound = new Media(Paths.get("Music.wav").toUri().toString());
+        //MediaPlayer mp = new MediaPlayer(sound);
+        //mp.play();
 
         scene.setOnKeyPressed(e -> {
             if (!GameManager.getInstance().isPlayersTurn()) return;

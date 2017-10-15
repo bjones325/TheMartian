@@ -12,6 +12,7 @@ public class WellCraft extends Item {
     @Override
     public void onCraft() {
         int[] loc = GameManager.getInstance().getPlayerLoc();
+        GameManager.getInstance().getPlayer().pickUpObject(ItemEnum.IRON_ORE, -10);
         BuildingManager.getInstance().spawnBuilding(BuildingEnum.WELL, loc[0], loc[1]);
     }
 }
