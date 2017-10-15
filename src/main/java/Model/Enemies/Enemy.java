@@ -93,7 +93,6 @@ public abstract class Enemy extends Occupant {
             StateInfo result = open.poll();
             Tile t = GameManager.getInstance().getTileManager().getTile(locX + result.dx, locY + result.dy);
             while (t.isOccupied() || t.getTileType().equals(TileEnum.MOUNTAIN)) {
-                System.out.println("unavailable tile");
                 if (open.isEmpty()) return;
                 result = open.poll();
                 t = GameManager.getInstance().getTileManager().getTile(locX + result.dx, locY + result.dy);
