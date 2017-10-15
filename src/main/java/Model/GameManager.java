@@ -2,6 +2,7 @@ package main.java.Model;
 
 import main.java.Model.Enemies.Enemy;
 import main.java.Model.Enemies.EnemyManager;
+import main.java.Model.Enemies.EnemyTypeEnum;
 import main.java.Model.Items.ItemManager;
 import main.java.Model.Tiles.*;
 import main.java.View.GameScreen;
@@ -85,7 +86,6 @@ public class GameManager {
 
     public void endOfTurnTick() {
         //When a player completes his turn it will call this
-
         em.onTick();
         bm.onTick();
         tm.getTile(getPlayer().getLocX(), getPlayer().getLocY()).effect();
