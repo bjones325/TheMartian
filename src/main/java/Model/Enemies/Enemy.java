@@ -74,10 +74,12 @@ public abstract class Enemy extends Occupant {
         while (speed > 0) {
             System.out.println("move");
             PriorityQueue<StateInfo> open = new PriorityQueue<>();
+
             open.add(new StateInfo(1, 0, playerX, playerY));
             open.add(new StateInfo(-1, 0, playerX, playerY));
             open.add(new StateInfo(0, 1, playerX, playerY));
             open.add(new StateInfo(0, -1, playerX, playerY));
+
             StateInfo result = open.poll();
             Tile t = GameManager.getInstance().getTileManager().getTile(locX + result.dx, locY + result.dy);
             while (t.isOccupied() || t.getTileType().equals(TileEnum.MOUNTAIN)) {
@@ -104,13 +106,16 @@ public abstract class Enemy extends Occupant {
         public StateInfo(int dx1, int dy1, int playerx, int playery) {
             dx = dx1;
             dy = dy1;
-            distance = (int) Math.sqrt(abs(playerx-locX + dx) + abs(playery-locY + dy));
+            distance = (int) (Math.pow(Math.abs(playerx-locX + dx), 2) + Math.pow(Math.abs(playery-locY + dy), 2));
+            System.out.println("DX: " + dx + " DY: " + dy + " distance " + distance);
         }
 
         @Override
         public int compareTo(StateInfo other) {
             return other.distance - distance;
         }
+
+
     }
 
 
