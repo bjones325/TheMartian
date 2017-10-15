@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
+import static java.lang.Math.abs;
+
 public abstract class Enemy extends Occupant {
     public int getLocX() {
         return locX;
@@ -54,7 +56,14 @@ public abstract class Enemy extends Occupant {
     }
 
     public void onTick() {
-        this.move();
+        int playerX = GameManager.getInstance().getPlayer().getLocX();
+        int playerY = GameManager.getInstance().getPlayer().getLocY();
+        if ((abs(locX - playerX) == 1 && (locY - playerY) == 0)
+                || (abs(locY - playerY) == 1) && locX - playerX == 0) {
+            GameManager.getInstance().getPlayer().attackedBy(this);
+        } else {
+            this.move();
+        }
     }
 
 
@@ -95,7 +104,7 @@ public abstract class Enemy extends Occupant {
         public StateInfo(int dx1, int dy1, int playerx, int playery) {
             dx = dx1;
             dy = dy1;
-            distance = (int) Math.sqrt(Math.abs(playerx-locX + dx) + Math.abs(playery-locY + dy));
+            distance = (int) Math.sqrt(abs(playerx-locX + dx) + abs(playery-locY + dy));
         }
 
         @Override
