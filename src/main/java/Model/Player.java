@@ -42,7 +42,7 @@ public class Player extends Occupant{
 
         inventory = new ArrayList<ItemStackObject>(20);
         inventory.add(new ItemStackObject(ItemEnum.IRON_ORE, 5));
-        playerImage = new Image("File:./assets/Player.png", 53, 53, true, true);
+        playerImage = new Image("assets/Player.png", 53, 53, true, true);
     }
 
     public static Player getPlayer() {

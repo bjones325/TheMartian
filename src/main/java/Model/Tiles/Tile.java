@@ -81,7 +81,7 @@ public class Tile {
         }
 
         if (hasItemStack()) {
-            tilePane.getChildren().add(new ImageView(new Image("File:./assets/ItemOverlay.png", 53, 53, true, true)));
+            tilePane.getChildren().add(new ImageView(new Image("assets/ItemOverlay.png", 53, 53, true, true)));
         }
         tilePane.setOnMouseClicked(e -> {
             GameManager.getInstance().setSelectedTile(this);

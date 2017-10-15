@@ -13,7 +13,7 @@ public class MartianDog extends Enemy {
         image = "MartianDog.png";
         health = 100;
         name = "Martian Dog";
-        occupantImage = new Image("File:./assets/MartianDog.png", 53, 53, true, true);
+        occupantImage = new Image("assets/MartianDog.png", 53, 53, true, true);
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Astronaut extends Enemy {
         image = "Astronaut.png";
         health = 100;
         name = "Astronaut";
-        occupantImage = new Image("File:./assets/Astronaut.png", 53, 53, true, true);
+        occupantImage = new Image("Astronaut.png", 53, 53, true, true);
     }
 
     @Override
