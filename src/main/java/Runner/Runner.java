@@ -43,9 +43,9 @@ public class Runner extends Application {
         GameManager.getInstance().getChatManager().addMessage("Your head hurts and you remember nothing...", Color.BLACK);
         GameManager.getInstance().getChatManager().addMessage("You look around...", Color.BLACK);
         GameManager.getInstance().getChatManager().addMessage("And notice you're on the surface of Mars!", Color.BLACK);
-        Media sound = new Media(Paths.get("Music.wav").toUri().toString());
-        MediaPlayer mp = new MediaPlayer(sound);
-        mp.play();
+        //Media sound = new Media(Paths.get("Music.wav").toUri().toString());
+        //MediaPlayer mp = new MediaPlayer(sound);
+        //mp.play();
 
         scene.setOnKeyPressed(e -> {
             if (!GameManager.getInstance().isPlayersTurn()) return;
