@@ -10,7 +10,7 @@ public class IronMineBlueprint extends Blueprint {
 
     public boolean buildable() {
         return (playerTileType == TileEnum.IRON_VEIN
-        && GameManager.getInstance().getPlayer().hasItemNum(10,ItemEnum.STONE));
+        && GameManager.getInstance().getPlayer().hasItemNum(10,ItemEnum.IRON_ORE));
     }
 
     public IronMineBlueprint() {
