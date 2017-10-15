@@ -27,6 +27,7 @@ public class Tile {
     public Tile(TileEnum terrain, int x, int y) {
         terrainType = terrain;
         occupant = null;
+        building = null;
         this.x = x;
         this.y = y;
         if (x == GameManager.getInstance().getPlayer().getLocX() &&
@@ -87,7 +88,10 @@ public class Tile {
 
     public Building getBuilding() { return building; }
 
-    public void setBuilding(Building building) { this.building = building; }
+    public void setBuilding(Building building) {
+        System.out.println("BUILT");
+        this.building = building;
+    }
 
     public boolean isOccupied() {
         return occupant != null;

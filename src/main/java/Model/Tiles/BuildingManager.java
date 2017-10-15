@@ -30,6 +30,7 @@ public class BuildingManager {
             b = (Building) buildingType.getRunnable().newInstance();
             b.setX(posX);
             b.setY(posY);
+            b.setBuildingType(buildingType);
         } catch (InstantiationException e) {
             System.exit(22);
         } catch (Exception e) {
