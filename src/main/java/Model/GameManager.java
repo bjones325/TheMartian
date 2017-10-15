@@ -1,10 +1,13 @@
 package main.java.Model;
 
+import javafx.scene.paint.Color;
 import main.java.Model.Enemies.Enemy;
 import main.java.Model.Enemies.EnemyManager;
 import main.java.Model.Items.ItemManager;
 import main.java.Model.Tiles.*;
 import main.java.View.GameScreen;
+
+import static javax.print.attribute.standard.Chromaticity.COLOR;
 
 public class GameManager {
 
@@ -86,10 +89,13 @@ public class GameManager {
     public void endOfTurnTick() {
         //When a player completes his turn it will call this
 
-        em.onTick();
+        player.setThirst(player.getThirst() - 1);
+        im.onTick();
         bm.onTick();
         tm.getTile(getPlayer().getLocX(), getPlayer().getLocY()).effect();
-        im.onTick();
+        em.onTick();
+
+        checkPlayerStatus();
         incrementTime();
 
         GameScreen.updateAllScreen();
@@ -101,5 +107,29 @@ public class GameManager {
 
     public void setPlayersTurn(boolean state) {
         playersTurn = state;
+    }
+
+    public boolean checkPlayerStatus() {
+        if (player.getTemp() > 100) {
+            player.setHealth(player.getHealth() - (player.getTemp() - 100) / 10);
+            getChatManager().addMessage("Your suit is unbearably hot! Find a way to cool down or you will die", Color.RED);
+        }
+
+        if (player.getTemp() < 0) {
+            player.setHealth(player.getHealth() + (player.getTemp() / 10));
+            getChatManager().addMessage("Your suit is unbearably cool! Find a way to heat up or you will die", Color.RED);
+        }
+
+        if(player.getHealth() <= 0) {
+            getChatManager().addMessage("You died of injury...", Color.RED);
+            return false;
+        }
+
+        if(player.getThirst() < 0) {
+            getChatManager().addMessage("You died of thirstation", Color.RED);
+            return false;
+        }
+
+        return true;
     }
 }
