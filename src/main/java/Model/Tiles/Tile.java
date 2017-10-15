@@ -6,6 +6,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import main.java.Model.GameManager;
 import main.java.Model.Items.Item;
+import main.java.Model.Items.ItemEnum;
 import main.java.Model.Items.ItemStackObject;
 import main.java.Model.Occupant;
 
@@ -59,7 +60,10 @@ public class Tile {
             case CRATER:
                 GameManager.getInstance().getPlayer().setHealth(GameManager.getInstance().getPlayer().getHealth() - 10);
                 GameManager.getInstance().getChatManager().addMessage("You fell into the crater, bruising yourself...", Color.RED);
-
+                break;
+            case IRON_VEIN:
+                GameManager.getInstance().getPlayer().pickUpObject(ItemEnum.IRON_ORE, 1);
+                GameManager.getInstance().getChatManager().addMessage("You found some iron here", Color.BLACK);
         }
     }
 

@@ -11,7 +11,7 @@ public enum BuildingEnum {
 
     private Image buildingImg;
 
-    private BuildingEnum(Class type) {
+    BuildingEnum(Class type) {
         this.tmp = type;
     }
 
