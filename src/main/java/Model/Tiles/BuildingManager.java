@@ -16,6 +16,7 @@ public class BuildingManager {
 
     public void onTick() {
         for (Building b : buildingList) {
+            System.out.println("Checking building" + b);
             b.onTick();
         }
     }

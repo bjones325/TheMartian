@@ -1,5 +1,7 @@
 package main.java.Model.Tiles;
 
+import main.java.Model.GameManager;
+
 import java.util.Random;
 
 public class TileManager {

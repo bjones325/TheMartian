@@ -8,7 +8,7 @@ public class WellBlueprint extends Blueprint {
     TileEnum playerTileType = GameManager.getInstance().getPlayerTileType();
 
     public boolean buildable() {
-        return (GameManager.getInstance().getPlayer().hasItemNum(10,ItemEnum.STONE));
+        return (GameManager.getInstance().getPlayer().hasItemNum(10,ItemEnum.IRON_ORE));
     }
 
     public WellBlueprint() {
