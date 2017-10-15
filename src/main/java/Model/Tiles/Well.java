@@ -5,9 +5,12 @@ public class Well extends Building {
         super.setX(x);
         super.setY(y);
         super.setBuildingType(BuildingEnum.WELL);
-
+    }
 
 
     @Override
-    public void onTick() { };
+    public void onTick() {
+    }
+
 }
+

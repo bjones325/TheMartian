@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 public enum BuildingEnum {
     IRON_MINE(IronMine.class),
-    WELL(null),
+    WELL(Well.class),
     TEMP_CONVERTER(null);
 
     private Class tmp;
