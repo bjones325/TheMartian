@@ -16,6 +16,8 @@ public class Player extends Occupant{
     private int thirst;
     private int energy;
 
+    private final int INIT_MAX_CAP = 10;
+
     private int energyRate;
 
     private int locX;
@@ -177,6 +179,17 @@ public class Player extends Occupant{
         inventory.add(tmp);
 
         return true;
+    }
+
+    public void refillWater() {
+        int max_cap = INIT_MAX_CAP;
+        for (ItemStackObject item : inventory) {
+            if (item.get_obj() == ItemEnum.BUCKET) {
+                max_cap += 10;
+            }
+        }
+
+        thirst = max_cap;
     }
 
     public ArrayList<ItemStackObject> getInventory() {

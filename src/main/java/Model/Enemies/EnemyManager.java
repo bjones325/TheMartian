@@ -60,8 +60,16 @@ public class EnemyManager {
             int y = -1;
             int max = GameManager.getInstance().getTileManager().getWidthHeight();
             while (x < 0 || y < 0 || x > max - 1 || y > max - 1 || GameManager.getInstance().getTileManager().getTile(x, y).isOccupied()) {
-                x = r.nextInt(10) - 5 + GameManager.getInstance().getPlayer().getLocX();
-                y = r.nextInt(10) - 5 + GameManager.getInstance().getPlayer().getLocY();
+                if (r.nextInt(2) == 0) {
+                    x = r.nextInt(10) + 5 + GameManager.getInstance().getPlayer().getLocX();
+                } else {
+                    x = - r.nextInt(10) - 5 + GameManager.getInstance().getPlayer().getLocX();
+                }
+                if (r.nextInt(2) == 0) {
+                    y = r.nextInt(10) + 5 + GameManager.getInstance().getPlayer().getLocY();
+                } else {
+                    y = - r.nextInt(10) - 5 + GameManager.getInstance().getPlayer().getLocY();
+                }
              }
             spawn(et, x, y);
         }
