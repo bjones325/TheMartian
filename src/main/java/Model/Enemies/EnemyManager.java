@@ -48,12 +48,13 @@ public class EnemyManager {
 
         if (day < 3) return;
         chance += day * .02;
-        chance *= (12 - time) / -15;
+        chance += (12 - time) / -100;
 
+        Random r = new Random();
+        if (r.nextInt(9) != 1) return;
         System.out.println("Spawn Chance:" + chance);
         while (chance > 0) {
             chance--;
-            Random r = new Random();
             EnemyTypeEnum et = EnemyTypeEnum.values()[r.nextInt(EnemyTypeEnum.values().length)];
             int x = -1;
             int y = -1;
