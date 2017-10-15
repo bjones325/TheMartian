@@ -49,7 +49,6 @@ public class EnemyManager {
 
         Random r = new Random();
         if (r.nextInt(9) != 1) return;
-        System.out.println("Spawn Chance:" + chance);
         while (chance > 0) {
             chance--;
             EnemyTypeEnum et = EnemyTypeEnum.values()[r.nextInt(EnemyTypeEnum.values().length)];
