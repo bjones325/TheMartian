@@ -36,6 +36,15 @@ public abstract class Enemy extends Occupant {
         return attack;
     }
 
+    public boolean damaged(int damage) {
+        if ((health -= damage) < 0) {
+            GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(null);
+            EnemyManager.getInstance().enemies.remove(this);
+            return true;
+        }
+        return false;
+    }
+
     protected int moveSpd;
     protected int attack;
     EnemyTypeEnum type;

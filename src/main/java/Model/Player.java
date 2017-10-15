@@ -10,6 +10,8 @@ import main.java.Model.Tiles.TileEnum;
 
 import java.util.ArrayList;
 
+import static java.lang.Math.abs;
+
 public class Player extends Occupant{
 
     private int health;
@@ -205,5 +207,17 @@ public class Player extends Occupant{
     public void attackedBy(Enemy e) {
         health -= e.getAttack();
         GameManager.getInstance().getChatManager().addMessage("You've been attacked by a " + e.getName() + "!", Color.CRIMSON);
+    }
+
+    public void attack(Enemy e) {
+        int damage = 5;
+        if ((abs(locX - e.getLocX()) == 1 && (locY - e.getLocY()) == 0)
+                || (abs(locY - e.getLocY()) == 1) && locX - e.getLocX() == 0) {
+            if (e.damaged(damage)) {
+                GameManager.getInstance().getChatManager().addMessage("You attack the " + e.getName() + " killing it!", Color.GREEN);
+            } else {
+                GameManager.getInstance().getChatManager().addMessage("You attack the " + e.getName() + " damaging it by " + damage + " health!", Color.GREEN);
+            }
+        }
     }
 }

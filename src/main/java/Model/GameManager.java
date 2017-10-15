@@ -22,6 +22,8 @@ public class GameManager {
     private BuildingManager bm;
     private ItemManager im;
 
+    private Tile selectedTile;
+
     private boolean playersTurn;
 
     private static GameManager instance = new GameManager();
@@ -132,5 +134,14 @@ public class GameManager {
         }
 
         return true;
+    }
+
+    public void setSelectedTile(Tile t) {
+        selectedTile = t;
+        GameScreen.updateAllScreen();
+    }
+
+    public Tile getSelectedTile() {
+        return selectedTile;
     }
 }
