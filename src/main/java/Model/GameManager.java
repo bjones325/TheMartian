@@ -19,6 +19,11 @@ public class GameManager {
     private ChatManager chatManager;
     private TileManager tm;
     private EnemyManager em;
+
+    public BuildingManager getBuildingManager() {
+        return bm;
+    }
+
     private BuildingManager bm;
     private ItemManager im;
 
@@ -39,6 +44,8 @@ public class GameManager {
         bm = BuildingManager.getInstance();
         im = ItemManager.getInstance();
         playersTurn = true;
+        BuildingManager.getInstance().spawnBuilding( BuildingEnum.HOMEBASE, 50,  50);
+
     }
 
     public static GameManager getInstance() {

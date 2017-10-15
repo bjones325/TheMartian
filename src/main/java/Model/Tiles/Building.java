@@ -1,12 +1,13 @@
 package main.java.Model.Tiles;
 
 public abstract class Building {
-    private int x;
-    private int y;
+    protected int x;
+    protected int y;
 
     private BuildingEnum buildingType;
 
-    public abstract void onTick();
+    public abstract void onTick(
+    );
 
     public void setX(int x) {
         this.x = x;
