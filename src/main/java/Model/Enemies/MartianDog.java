@@ -8,7 +8,7 @@ public class MartianDog extends Enemy {
 
     public MartianDog(int locX, int locY) {
         super(locX,locY);
-        moveSpd = 1;
+        moveSpd = 2;
         attack = 1;
         image = "MartianDog.png";
         health = 100;
