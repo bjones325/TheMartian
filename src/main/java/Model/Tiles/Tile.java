@@ -57,6 +57,8 @@ public class Tile {
                 GameManager.getInstance().getChatManager().addMessage("The desert makes you consider your dwindling supply of water...", Color.RED);
                 break;
             case SWAMP:
+                GameManager.getInstance().getPlayer().setThirst(GameManager.getInstance().getPlayer().getThirst() + 2);
+                GameManager.getInstance().getChatManager().addMessage("Drip fucking splash.", Color.BLUE);
                 break;
             case CRATER:
                 GameManager.getInstance().getPlayer().setHealth(GameManager.getInstance().getPlayer().getHealth() - 10);
