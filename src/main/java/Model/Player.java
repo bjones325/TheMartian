@@ -1,6 +1,7 @@
 package main.java.Model;
 
 import javafx.scene.image.Image;
+import main.java.Model.Enemies.Enemy;
 import main.java.Model.Items.Item;
 import javafx.scene.paint.Color;
 import main.java.Model.Items.ItemEnum;
@@ -199,5 +200,10 @@ public class Player extends Occupant{
     @Override
     public Image getOccupantImage() {
         return playerImage;
+    }
+
+    public void attackedBy(Enemy e) {
+        health -= e.getAttack();
+        GameManager.getInstance().getChatManager().addMessage("You've been attacked by a " + e.getName() + "!", Color.CRIMSON);
     }
 }
