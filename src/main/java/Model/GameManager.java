@@ -19,8 +19,15 @@ public class GameManager {
     private ChatManager chatManager;
     private TileManager tm;
     private EnemyManager em;
+
+    public BuildingManager getBuildingManager() {
+        return bm;
+    }
+
     private BuildingManager bm;
     private ItemManager im;
+
+    private Tile selectedTile;
 
     private boolean playersTurn;
 
@@ -39,6 +46,8 @@ public class GameManager {
         bm = BuildingManager.getInstance();
         im = ItemManager.getInstance();
         playersTurn = true;
+        BuildingManager.getInstance().spawnBuilding( BuildingEnum.HOMEBASE, 50,  50);
+
     }
 
     public static GameManager getInstance() {
@@ -132,5 +141,14 @@ public class GameManager {
         }
 
         return true;
+    }
+
+    public void setSelectedTile(Tile t) {
+        selectedTile = t;
+        GameScreen.updateAllScreen();
+    }
+
+    public Tile getSelectedTile() {
+        return selectedTile;
     }
 }

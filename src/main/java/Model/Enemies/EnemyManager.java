@@ -26,9 +26,6 @@ public class EnemyManager {
             case MYSTERIOUS_BLOB :
                 enemies.add(new MysteriousBlob(locX,locY));
                 break;
-            case ALIEN :
-                enemies.add(new Alien(locX,locY));
-                break;
         }
         GameManager.getInstance().getTileManager().getTile(locX, locY).setOccupant(enemies.getLast());
     }
