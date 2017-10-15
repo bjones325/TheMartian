@@ -74,7 +74,7 @@ public class Tile {
             tilePane.getChildren().add(new ImageView(occupant.getOccupantImage()));
         }
         if (building != null) {
-            //tilePane.getChildren().add(new ImageView(building.getBuildingType().getBuildingImg()));
+            tilePane.getChildren().add(new ImageView(building.getBuildingType().getBuildingImg()));
         }
 
         if (hasItemStack()) {
