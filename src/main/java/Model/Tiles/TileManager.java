@@ -17,8 +17,10 @@ public class TileManager {
 
         for(int x = 0; x < width; x++) {
             for(int y = 0; y < height; y++) {
-                if(random.nextInt(3) == 0) {
+                if(random.nextInt(3) != 0) {
                     map[x][y] = new Tile(TileEnum.BASE, x, y);
+                } else if (random.nextInt(5) != 0) {
+                    map[x][y] = new Tile(TileEnum.values()[random.nextInt(6)], x, y);
                 } else {
                     map[x][y] = new Tile(TileEnum.values()[random.nextInt(TileEnum.values().length)], x, y);
                 }
