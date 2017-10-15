@@ -9,9 +9,14 @@ public class Well extends Building {
         super.setBuildingType(BuildingEnum.WELL);
     }
 
+    public Well() {
+        super.setBuildingType(BuildingEnum.WELL);
+    }
+
 
     @Override
     public void onTick() {
+        System.out.print("ontick");
         if(GameManager.getInstance().getPlayer().getLocX() == super.getX() && GameManager.getInstance().getPlayer().getLocX() == super.getY()){
             GameManager.getInstance().getPlayer().refillWater();
         }

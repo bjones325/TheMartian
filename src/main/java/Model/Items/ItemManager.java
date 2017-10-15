@@ -22,6 +22,7 @@ public class ItemManager {
         blueprintList.add(Rifle.class);
         blueprintList.add(Slingshot.class);
         blueprintList.add(Sword.class);
+        blueprintList.add(WellCraft.class);
     }
 
     public void onTick() {
